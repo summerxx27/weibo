@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		389B9BCFA4F26DE10480F7B0 /* libPods-XTWeibo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A70632BBAE9771E0F93F228A /* libPods-XTWeibo.a */; };
+		B938A8641D8837F100A4F636 /* HomePageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B938A8631D8837F100A4F636 /* HomePageViewController.m */; };
+		B938A8671D88380900A4F636 /* CommonTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B938A8661D88380900A4F636 /* CommonTableViewCell.m */; };
+		B938A86A1D88385700A4F636 /* CommonModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B938A8691D88385700A4F636 /* CommonModel.m */; };
 		BC8394D51D87BF3D007130A9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BC8394D41D87BF3D007130A9 /* main.m */; };
 		BC8394D81D87BF3D007130A9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BC8394D71D87BF3D007130A9 /* AppDelegate.m */; };
 		BC8394DB1D87BF3D007130A9 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC8394DA1D87BF3D007130A9 /* ViewController.m */; };
@@ -17,7 +20,6 @@
 		BC8394EE1D87BF3D007130A9 /* XTWeiboTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BC8394ED1D87BF3D007130A9 /* XTWeiboTests.m */; };
 		BC8394F91D87BF3E007130A9 /* XTWeiboUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = BC8394F81D87BF3E007130A9 /* XTWeiboUITests.m */; };
 		BC83950B1D87E48B007130A9 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC83950A1D87E48B007130A9 /* LoginViewController.m */; };
-		BC8395121D87EFED007130A9 /* HomePageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC8395111D87EFED007130A9 /* HomePageViewController.m */; };
 		BC8395161D87F2A4007130A9 /* XTNetwork.m in Sources */ = {isa = PBXBuildFile; fileRef = BC8395151D87F2A4007130A9 /* XTNetwork.m */; };
 /* End PBXBuildFile section */
 
@@ -42,6 +44,12 @@
 		1237CEF09411E85B15A98D69 /* Pods-XTWeibo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XTWeibo.release.xcconfig"; path = "Pods/Target Support Files/Pods-XTWeibo/Pods-XTWeibo.release.xcconfig"; sourceTree = "<group>"; };
 		1CF959AE7C241F6E3C6721F3 /* Pods-XTWeibo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XTWeibo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-XTWeibo/Pods-XTWeibo.debug.xcconfig"; sourceTree = "<group>"; };
 		A70632BBAE9771E0F93F228A /* libPods-XTWeibo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-XTWeibo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B938A8621D8837F100A4F636 /* HomePageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomePageViewController.h; sourceTree = "<group>"; };
+		B938A8631D8837F100A4F636 /* HomePageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomePageViewController.m; sourceTree = "<group>"; };
+		B938A8651D88380900A4F636 /* CommonTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonTableViewCell.h; sourceTree = "<group>"; };
+		B938A8661D88380900A4F636 /* CommonTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommonTableViewCell.m; sourceTree = "<group>"; };
+		B938A8681D88385700A4F636 /* CommonModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonModel.h; sourceTree = "<group>"; };
+		B938A8691D88385700A4F636 /* CommonModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommonModel.m; sourceTree = "<group>"; };
 		BC8394D01D87BF3D007130A9 /* XTWeibo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XTWeibo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC8394D41D87BF3D007130A9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		BC8394D61D87BF3D007130A9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -61,8 +69,6 @@
 		BC8395071D87D64B007130A9 /* XTWeiboPrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XTWeiboPrefixHeader.pch; sourceTree = "<group>"; };
 		BC8395091D87E48B007130A9 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		BC83950A1D87E48B007130A9 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
-		BC8395101D87EFED007130A9 /* HomePageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomePageViewController.h; sourceTree = "<group>"; };
-		BC8395111D87EFED007130A9 /* HomePageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomePageViewController.m; sourceTree = "<group>"; };
 		BC8395141D87F2A4007130A9 /* XTNetwork.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XTNetwork.h; sourceTree = "<group>"; };
 		BC8395151D87F2A4007130A9 /* XTNetwork.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XTNetwork.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -108,6 +114,33 @@
 				A70632BBAE9771E0F93F228A /* libPods-XTWeibo.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B938A85F1D8837D900A4F636 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				B938A8621D8837F100A4F636 /* HomePageViewController.h */,
+				B938A8631D8837F100A4F636 /* HomePageViewController.m */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		B938A8601D8837D900A4F636 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B938A8681D88385700A4F636 /* CommonModel.h */,
+				B938A8691D88385700A4F636 /* CommonModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		B938A8611D8837D900A4F636 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B938A8651D88380900A4F636 /* CommonTableViewCell.h */,
+				B938A8661D88380900A4F636 /* CommonTableViewCell.m */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		BC8394C71D87BF3C007130A9 = {
@@ -190,34 +223,11 @@
 		BC83950C1D87EFC7007130A9 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				BC83950E1D87EFC7007130A9 /* M */,
-				BC83950F1D87EFC7007130A9 /* V */,
-				BC83950D1D87EFC7007130A9 /* C */,
+				B938A85F1D8837D900A4F636 /* Controllers */,
+				B938A8601D8837D900A4F636 /* Model */,
+				B938A8611D8837D900A4F636 /* View */,
 			);
 			path = Home;
-			sourceTree = "<group>";
-		};
-		BC83950D1D87EFC7007130A9 /* C */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = C;
-			sourceTree = "<group>";
-		};
-		BC83950E1D87EFC7007130A9 /* M */ = {
-			isa = PBXGroup;
-			children = (
-				BC8395101D87EFED007130A9 /* HomePageViewController.h */,
-				BC8395111D87EFED007130A9 /* HomePageViewController.m */,
-			);
-			path = M;
-			sourceTree = "<group>";
-		};
-		BC83950F1D87EFC7007130A9 /* V */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = V;
 			sourceTree = "<group>";
 		};
 		BC8395131D87F1DF007130A9 /* Tool */ = {
@@ -412,8 +422,10 @@
 			files = (
 				BC83950B1D87E48B007130A9 /* LoginViewController.m in Sources */,
 				BC8394DB1D87BF3D007130A9 /* ViewController.m in Sources */,
+				B938A86A1D88385700A4F636 /* CommonModel.m in Sources */,
+				B938A8641D8837F100A4F636 /* HomePageViewController.m in Sources */,
+				B938A8671D88380900A4F636 /* CommonTableViewCell.m in Sources */,
 				BC8395161D87F2A4007130A9 /* XTNetwork.m in Sources */,
-				BC8395121D87EFED007130A9 /* HomePageViewController.m in Sources */,
 				BC8394D81D87BF3D007130A9 /* AppDelegate.m in Sources */,
 				BC8394D51D87BF3D007130A9 /* main.m in Sources */,
 			);
@@ -559,7 +571,7 @@
 			baseConfigurationReference = 1CF959AE7C241F6E3C6721F3 /* Pods-XTWeibo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				GCC_PREFIX_HEADER = /Users/zjwang/Desktop/XTWeibo/XTWeibo/XTWeiboPrefixHeader.pch;
+				GCC_PREFIX_HEADER = /Users/summerxx/Desktop/GitHubRepo/weibo/XTWeibo/XTWeibo/XTWeiboPrefixHeader.pch;
 				INFOPLIST_FILE = XTWeibo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -573,7 +585,7 @@
 			baseConfigurationReference = 1237CEF09411E85B15A98D69 /* Pods-XTWeibo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				GCC_PREFIX_HEADER = /Users/zjwang/Desktop/XTWeibo/XTWeibo/XTWeiboPrefixHeader.pch;
+				GCC_PREFIX_HEADER = /Users/summerxx/Desktop/GitHubRepo/weibo/XTWeibo/XTWeibo/XTWeiboPrefixHeader.pch;
 				INFOPLIST_FILE = XTWeibo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
