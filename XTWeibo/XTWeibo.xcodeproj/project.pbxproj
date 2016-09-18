@@ -11,6 +11,9 @@
 		B938A8641D8837F100A4F636 /* HomePageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B938A8631D8837F100A4F636 /* HomePageViewController.m */; };
 		B938A8671D88380900A4F636 /* CommonTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B938A8661D88380900A4F636 /* CommonTableViewCell.m */; };
 		B938A86A1D88385700A4F636 /* CommonModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B938A8691D88385700A4F636 /* CommonModel.m */; };
+		B9F287D51D8EBDE700E90C8D /* SDBrowserImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = B9F287CF1D8EBDE700E90C8D /* SDBrowserImageView.m */; };
+		B9F287D61D8EBDE700E90C8D /* SDPhotoBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = B9F287D11D8EBDE700E90C8D /* SDPhotoBrowser.m */; };
+		B9F287D71D8EBDE700E90C8D /* SDWaitingView.m in Sources */ = {isa = PBXBuildFile; fileRef = B9F287D41D8EBDE700E90C8D /* SDWaitingView.m */; };
 		BC8394D51D87BF3D007130A9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BC8394D41D87BF3D007130A9 /* main.m */; };
 		BC8394D81D87BF3D007130A9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BC8394D71D87BF3D007130A9 /* AppDelegate.m */; };
 		BC8394DB1D87BF3D007130A9 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC8394DA1D87BF3D007130A9 /* ViewController.m */; };
@@ -22,9 +25,6 @@
 		BC83950B1D87E48B007130A9 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC83950A1D87E48B007130A9 /* LoginViewController.m */; };
 		BC8395161D87F2A4007130A9 /* XTNetwork.m in Sources */ = {isa = PBXBuildFile; fileRef = BC8395151D87F2A4007130A9 /* XTNetwork.m */; };
 		BCD0F52C1D88F20A00153623 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = BCD0F52B1D88F20A00153623 /* User.m */; };
-		BCD0F5351D89075700153623 /* SDBrowserImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = BCD0F52F1D89075700153623 /* SDBrowserImageView.m */; };
-		BCD0F5361D89075700153623 /* SDPhotoBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = BCD0F5311D89075700153623 /* SDPhotoBrowser.m */; };
-		BCD0F5371D89075700153623 /* SDWaitingView.m in Sources */ = {isa = PBXBuildFile; fileRef = BCD0F5341D89075700153623 /* SDWaitingView.m */; };
 		BCD0F53A1D89076F00153623 /* SDPhotoGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = BCD0F5391D89076F00153623 /* SDPhotoGroup.m */; };
 		BCD0F53D1D89089C00153623 /* SDPhotoItem.m in Sources */ = {isa = PBXBuildFile; fileRef = BCD0F53C1D89089C00153623 /* SDPhotoItem.m */; };
 		BCD0F5451D89320A00153623 /* NewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BCD0F5441D89320A00153623 /* NewsViewController.m */; };
@@ -61,6 +61,13 @@
 		B938A8661D88380900A4F636 /* CommonTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommonTableViewCell.m; sourceTree = "<group>"; };
 		B938A8681D88385700A4F636 /* CommonModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonModel.h; sourceTree = "<group>"; };
 		B938A8691D88385700A4F636 /* CommonModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommonModel.m; sourceTree = "<group>"; };
+		B9F287CE1D8EBDE700E90C8D /* SDBrowserImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDBrowserImageView.h; sourceTree = "<group>"; };
+		B9F287CF1D8EBDE700E90C8D /* SDBrowserImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDBrowserImageView.m; sourceTree = "<group>"; };
+		B9F287D01D8EBDE700E90C8D /* SDPhotoBrowser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDPhotoBrowser.h; sourceTree = "<group>"; };
+		B9F287D11D8EBDE700E90C8D /* SDPhotoBrowser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDPhotoBrowser.m; sourceTree = "<group>"; };
+		B9F287D21D8EBDE700E90C8D /* SDPhotoBrowserConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDPhotoBrowserConfig.h; sourceTree = "<group>"; };
+		B9F287D31D8EBDE700E90C8D /* SDWaitingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDWaitingView.h; sourceTree = "<group>"; };
+		B9F287D41D8EBDE700E90C8D /* SDWaitingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDWaitingView.m; sourceTree = "<group>"; };
 		BC8394D01D87BF3D007130A9 /* XTWeibo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XTWeibo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC8394D41D87BF3D007130A9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		BC8394D61D87BF3D007130A9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -84,13 +91,6 @@
 		BC8395151D87F2A4007130A9 /* XTNetwork.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XTNetwork.m; sourceTree = "<group>"; };
 		BCD0F52A1D88F20A00153623 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
 		BCD0F52B1D88F20A00153623 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
-		BCD0F52E1D89075700153623 /* SDBrowserImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDBrowserImageView.h; sourceTree = "<group>"; };
-		BCD0F52F1D89075700153623 /* SDBrowserImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDBrowserImageView.m; sourceTree = "<group>"; };
-		BCD0F5301D89075700153623 /* SDPhotoBrowser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDPhotoBrowser.h; sourceTree = "<group>"; };
-		BCD0F5311D89075700153623 /* SDPhotoBrowser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDPhotoBrowser.m; sourceTree = "<group>"; };
-		BCD0F5321D89075700153623 /* SDPhotoBrowserConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDPhotoBrowserConfig.h; sourceTree = "<group>"; };
-		BCD0F5331D89075700153623 /* SDWaitingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDWaitingView.h; sourceTree = "<group>"; };
-		BCD0F5341D89075700153623 /* SDWaitingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDWaitingView.m; sourceTree = "<group>"; };
 		BCD0F5381D89076F00153623 /* SDPhotoGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDPhotoGroup.h; sourceTree = "<group>"; };
 		BCD0F5391D89076F00153623 /* SDPhotoGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDPhotoGroup.m; sourceTree = "<group>"; };
 		BCD0F53B1D89089C00153623 /* SDPhotoItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDPhotoItem.h; sourceTree = "<group>"; };
@@ -181,6 +181,20 @@
 				BCD0F5391D89076F00153623 /* SDPhotoGroup.m */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		B9F287CD1D8EBDE700E90C8D /* SDPhotoBrowser */ = {
+			isa = PBXGroup;
+			children = (
+				B9F287CE1D8EBDE700E90C8D /* SDBrowserImageView.h */,
+				B9F287CF1D8EBDE700E90C8D /* SDBrowserImageView.m */,
+				B9F287D01D8EBDE700E90C8D /* SDPhotoBrowser.h */,
+				B9F287D11D8EBDE700E90C8D /* SDPhotoBrowser.m */,
+				B9F287D21D8EBDE700E90C8D /* SDPhotoBrowserConfig.h */,
+				B9F287D31D8EBDE700E90C8D /* SDWaitingView.h */,
+				B9F287D41D8EBDE700E90C8D /* SDWaitingView.m */,
+			);
+			path = SDPhotoBrowser;
 			sourceTree = "<group>";
 		};
 		BC8394C71D87BF3C007130A9 = {
@@ -276,28 +290,13 @@
 			isa = PBXGroup;
 			children = (
 				BCE2A8B01D8E430400104BC5 /* HYBMasonryAutoCellHeight */,
-				BCD0F52D1D89075700153623 /* SDPhotoBrowser */,
 				BC8395141D87F2A4007130A9 /* XTNetwork.h */,
 				BC8395151D87F2A4007130A9 /* XTNetwork.m */,
 				BCD0F54A1D89385800153623 /* NSString+XTAdd.h */,
 				BCD0F54B1D89385800153623 /* NSString+XTAdd.m */,
+				B9F287CD1D8EBDE700E90C8D /* SDPhotoBrowser */,
 			);
 			path = Tool;
-			sourceTree = "<group>";
-		};
-		BCD0F52D1D89075700153623 /* SDPhotoBrowser */ = {
-			isa = PBXGroup;
-			children = (
-				BCD0F52E1D89075700153623 /* SDBrowserImageView.h */,
-				BCD0F52F1D89075700153623 /* SDBrowserImageView.m */,
-				BCD0F5301D89075700153623 /* SDPhotoBrowser.h */,
-				BCD0F5311D89075700153623 /* SDPhotoBrowser.m */,
-				BCD0F5321D89075700153623 /* SDPhotoBrowserConfig.h */,
-				BCD0F5331D89075700153623 /* SDWaitingView.h */,
-				BCD0F5341D89075700153623 /* SDWaitingView.m */,
-			);
-			name = SDPhotoBrowser;
-			path = "../../../../../SDPhotoBrowser-master-2/SDPhotoBrowser/SDPhotoBrowser";
 			sourceTree = "<group>";
 		};
 		BCD0F5421D89320400153623 /* News */ = {
@@ -510,15 +509,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B9F287D51D8EBDE700E90C8D /* SDBrowserImageView.m in Sources */,
 				BCD0F53D1D89089C00153623 /* SDPhotoItem.m in Sources */,
 				BC83950B1D87E48B007130A9 /* LoginViewController.m in Sources */,
 				BCD0F5491D89323100153623 /* MyViewController.m in Sources */,
 				BC8394DB1D87BF3D007130A9 /* ViewController.m in Sources */,
 				BCD0F52C1D88F20A00153623 /* User.m in Sources */,
+				B9F287D71D8EBDE700E90C8D /* SDWaitingView.m in Sources */,
+				B9F287D61D8EBDE700E90C8D /* SDPhotoBrowser.m in Sources */,
 				BCD0F54C1D89385800153623 /* NSString+XTAdd.m in Sources */,
 				B938A86A1D88385700A4F636 /* CommonModel.m in Sources */,
-				BCD0F5361D89075700153623 /* SDPhotoBrowser.m in Sources */,
-				BCD0F5351D89075700153623 /* SDBrowserImageView.m in Sources */,
 				B938A8641D8837F100A4F636 /* HomePageViewController.m in Sources */,
 				B938A8671D88380900A4F636 /* CommonTableViewCell.m in Sources */,
 				BCD0F53A1D89076F00153623 /* SDPhotoGroup.m in Sources */,
@@ -528,7 +528,6 @@
 				BCD0F5451D89320A00153623 /* NewsViewController.m in Sources */,
 				BCE2A8B51D8E430400104BC5 /* UITableView+HYBCacheHeight.m in Sources */,
 				BC8394D51D87BF3D007130A9 /* main.m in Sources */,
-				BCD0F5371D89075700153623 /* SDWaitingView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

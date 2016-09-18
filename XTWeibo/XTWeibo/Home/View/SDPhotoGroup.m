@@ -25,7 +25,6 @@
     if (self) {
         // 清除图片缓存，便于测试
         [[SDWebImageManager sharedManager].imageCache clearDisk];
-        self.backgroundColor = [UIColor purpleColor];
         self.userInteractionEnabled = YES;
     }
     return self;
@@ -37,7 +36,7 @@
     
     [photoItemArray enumerateObjectsUsingBlock:^(SDPhotoItem *obj, NSUInteger idx, BOOL *stop) {
         UIButton *btn = [[UIButton alloc] init];
-        btn.backgroundColor = [UIColor colorWithRed:0.3026 green:0.8168 blue:1.0 alpha:1.0];
+//        btn.backgroundColor = [UIColor colorWithRed:0.3026 green:0.8168 blue:1.0 alpha:1.0];
         [btn sd_setImageWithURL:[NSURL URLWithString:obj.thumbnail_pic] forState:UIControlStateNormal];
         btn.tag = idx;
         [btn addTarget:self action:@selector(click:) forControlEvents:UIControlEventTouchUpInside];
@@ -66,7 +65,7 @@
         CGFloat x = columnIndex * (w + SDPhotoGroupImageMargin);
         CGFloat y = rowIndex * (h + SDPhotoGroupImageMargin);
         if (imageCount == 1) {
-            btn.frame = CGRectMake(x, y, (SCREEN_W - 63) / 3 * 2, (SCREEN_W - 63 - 10) / 3);
+            btn.frame = CGRectMake(x, y, (SCREEN_W - 63), (SCREEN_W - 63) / 7 * 4);
         }else{ btn.frame = CGRectMake(x, y, w, h);}
         
     }];

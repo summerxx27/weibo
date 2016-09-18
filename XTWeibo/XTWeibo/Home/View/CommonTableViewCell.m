@@ -33,7 +33,7 @@
         _headerImageView.layer.borderWidth = 1;
         _headerImageView.layer.borderColor = [UIColor lightGrayColor].CGColor;
         // 昵称
-        _labelName.preferredMaxLayoutWidth = SCREEN_W - 30;
+        _labelName.preferredMaxLayoutWidth = SCREEN_W - 73;
         [_labelName mas_makeConstraints:^(MASConstraintMaker *make) {
             make.top.equalTo(self.contentView).with.offset(SPACE);
             make.left.equalTo(self.headerImageView.mas_right).with.offset(SPACE);
@@ -54,9 +54,9 @@
         _labelTime.backgroundColor = [UIColor greenColor];
         // 发布的内容
         // 文本显示多宽
-        self.labelText.preferredMaxLayoutWidth = SCREEN_W - 73;
+        self.labelText.preferredMaxLayoutWidth = SCREEN_W - 30;
         [_labelText mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.top.equalTo(self.labelTime.mas_bottom).with.offset(10);
+            make.top.equalTo(self.labelTime.mas_bottom).with.offset(SPACE);
             make.left.right.mas_equalTo(self.labelTime);
         }];
         _labelText.backgroundColor = [UIColor lightGrayColor];
@@ -110,14 +110,15 @@
 #pragma mark - 赋值
 - (void)configCellWithModel:(CommonModel *)model user:(User *)userModel
 {
+    
+    // 
     [_headerImageView sd_setImageWithURL:[NSURL URLWithString:userModel.profile_image_url] placeholderImage:nil];
     _labelName.text = userModel.name;
     _labelTime.text = model.created_at;
     _labelText.text = model.text;
-    
-    
+    // 计算Photo的height
     CGFloat pg_Height = 0.0;
-    if (model.pic_urls.count > 0 && model.pic_urls.count <= 3) {
+    if (model.pic_urls.count > 1 && model.pic_urls.count <= 3) {
         pg_Height = (SCREEN_W - 73) / 3 + 5;
     }else if(model.pic_urls.count > 3 && model.pic_urls.count <= 6)
     {
@@ -125,11 +126,16 @@
     }else if (model.pic_urls.count > 6 && model.pic_urls.count <= 9)
     {
         pg_Height = (SCREEN_W - 73) + 15;
-    }else
+    }else if (model.pic_urls.count == 1)
+    {
+        // 单张图片 为 4/7
+        pg_Height = (SCREEN_W - 63) * 4 / 7 + 5;
+    }
+    else
     {
         pg_Height = 0.0;
     }
-    NSLog(@"%f", pg_Height);
+    // 更新约束
     [_photosGroup mas_updateConstraints:^(MASConstraintMaker *make) {
         make.height.mas_equalTo(pg_Height);
     }];

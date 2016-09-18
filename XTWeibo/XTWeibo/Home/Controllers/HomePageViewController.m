@@ -23,9 +23,13 @@
 @end
 
 @implementation HomePageViewController
-- (NSInteger)page
+- (instancetype)init
 {
-    return _page = 1;
+    self = [super init];
+    if (self) {
+        self.page = 1;
+    }
+    return self;
 }
 - (NSMutableArray *)dataArray
 {
@@ -67,7 +71,7 @@
     // accessToken = @"2.00yOHsNEegFVBEa4756136060YytgK"
 //    NSString *accessToken = [[NSUserDefaults standardUserDefaults] objectForKey:ACCESS_TOKEN];
     NSString *url = [NSString stringWithFormat:WEIBO_STATUSES_FRIENDS, @"2.00yOHsNEegFVBEa4756136060YytgK", (long)self.page];
-    NSLog(@"%@", url);
+    NSLog(@"===========================================%@", url);
     [XTNetwork XTNetworkRequestWithURL:url parameter:nil methods:GET successResult:^(id result) {
         if ([result isKindOfClass:[NSDictionary class]]) {
             NSMutableArray *statisesArray = [result objectForKey:@"statuses"];
@@ -76,7 +80,6 @@
                 CommonModel *cModel = [CommonModel yy_modelWithDictionary:dic];
                 User *user = [User yy_modelWithDictionary:[dic objectForKey:@"user"]];
                 [self.dataArray addObject:cModel];
-                NSLog(@"%@", user.profile_image_url);
                 [self.userArray addObject:user];
             }
         }
@@ -147,7 +150,6 @@
     // 设置header
     self.tableView.mj_header = header;
     
-    // 下拉加载
     // 添加默认的上拉刷新
     // 设置回调（一旦进入刷新状态，就调用target的action，也就是调用self的loadMoreData方法）
     MJRefreshAutoNormalFooter *footer = [MJRefreshAutoNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadMoreData)];
