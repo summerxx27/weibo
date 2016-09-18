@@ -8,7 +8,7 @@
 
 #ifndef XTWeiboPrefixHeader_pch
 #define XTWeiboPrefixHeader_pch
-
+// key
 #define WEI_APP_KEY         @"3686717696"
 #define KREDIRECTURI        @"http://www.sina.com"
 #define ACCESS_TOKEN        @"accessToken"
@@ -16,16 +16,19 @@
 #define REQUEST_USER_INFO   @"requestUserInfo"
 #define DISS_MISS_VC        @"dissmissvc"
 #define REQ_NETWORK          @"reqnetwork"
-
-// Include any system framework and library headers here that should be included in all compilation units.
-// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+// frame
+#define SCREEN_W [UIScreen mainScreen].bounds.size.width
+#define SCREEN_H [UIScreen mainScreen].bounds.size.height
 // import
 #import <WeiboSDK.h>
 #import <AFNetworking.h>
 #import <MBProgressHUD.h>
 #import <Masonry.h>
-#import <MJExtension.h>
+#import <MJRefresh.h>
+#import <YYModel.h>
 #import <SDWebImage/UIImageView+WebCache.h>
+#import "NSString+XTAdd.h"
+#import "UITableViewCell+HYBMasonryAutoCellHeight.h"
 // 接口
 /**
  access_token	true	string	采用OAuth授权方式为必填参数，OAuth授权后获得。
@@ -34,5 +37,5 @@
  base_app       false	int	是否只获取当前应用的数据。0为否（所有数据），1为是（仅当前应用），默认为0。
  */
 #define WEIBO_STATUSES_PUBLIC @"https://api.weibo.com/2/statuses/public_timeline.json?access_token=%@&count=50&base_app=0&page=1"
-#define WEIBO_STATUSES_FRIENDS @"https://api.weibo.com/2/statuses/friends_timeline.json?access_token=%@&since_id=0&max_id=0&count=20&base_app=0&feature=0&trim_user=0&page=1"
+#define WEIBO_STATUSES_FRIENDS @"https://api.weibo.com/2/statuses/friends_timeline.json?access_token=%@&since_id=0&max_id=0&count=10&base_app=0&feature=0&trim_user=0&page=%ld"
 #endif /* XTWeiboPrefixHeader_pch */

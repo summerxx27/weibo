@@ -21,6 +21,17 @@
 		BC8394F91D87BF3E007130A9 /* XTWeiboUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = BC8394F81D87BF3E007130A9 /* XTWeiboUITests.m */; };
 		BC83950B1D87E48B007130A9 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC83950A1D87E48B007130A9 /* LoginViewController.m */; };
 		BC8395161D87F2A4007130A9 /* XTNetwork.m in Sources */ = {isa = PBXBuildFile; fileRef = BC8395151D87F2A4007130A9 /* XTNetwork.m */; };
+		BCD0F52C1D88F20A00153623 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = BCD0F52B1D88F20A00153623 /* User.m */; };
+		BCD0F5351D89075700153623 /* SDBrowserImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = BCD0F52F1D89075700153623 /* SDBrowserImageView.m */; };
+		BCD0F5361D89075700153623 /* SDPhotoBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = BCD0F5311D89075700153623 /* SDPhotoBrowser.m */; };
+		BCD0F5371D89075700153623 /* SDWaitingView.m in Sources */ = {isa = PBXBuildFile; fileRef = BCD0F5341D89075700153623 /* SDWaitingView.m */; };
+		BCD0F53A1D89076F00153623 /* SDPhotoGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = BCD0F5391D89076F00153623 /* SDPhotoGroup.m */; };
+		BCD0F53D1D89089C00153623 /* SDPhotoItem.m in Sources */ = {isa = PBXBuildFile; fileRef = BCD0F53C1D89089C00153623 /* SDPhotoItem.m */; };
+		BCD0F5451D89320A00153623 /* NewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BCD0F5441D89320A00153623 /* NewsViewController.m */; };
+		BCD0F5491D89323100153623 /* MyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BCD0F5481D89323100153623 /* MyViewController.m */; };
+		BCD0F54C1D89385800153623 /* NSString+XTAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = BCD0F54B1D89385800153623 /* NSString+XTAdd.m */; };
+		BCE2A8B51D8E430400104BC5 /* UITableView+HYBCacheHeight.m in Sources */ = {isa = PBXBuildFile; fileRef = BCE2A8B21D8E430400104BC5 /* UITableView+HYBCacheHeight.m */; };
+		BCE2A8B61D8E430400104BC5 /* UITableViewCell+HYBMasonryAutoCellHeight.m in Sources */ = {isa = PBXBuildFile; fileRef = BCE2A8B41D8E430400104BC5 /* UITableViewCell+HYBMasonryAutoCellHeight.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +82,29 @@
 		BC83950A1D87E48B007130A9 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		BC8395141D87F2A4007130A9 /* XTNetwork.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XTNetwork.h; sourceTree = "<group>"; };
 		BC8395151D87F2A4007130A9 /* XTNetwork.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XTNetwork.m; sourceTree = "<group>"; };
+		BCD0F52A1D88F20A00153623 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		BCD0F52B1D88F20A00153623 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		BCD0F52E1D89075700153623 /* SDBrowserImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDBrowserImageView.h; sourceTree = "<group>"; };
+		BCD0F52F1D89075700153623 /* SDBrowserImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDBrowserImageView.m; sourceTree = "<group>"; };
+		BCD0F5301D89075700153623 /* SDPhotoBrowser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDPhotoBrowser.h; sourceTree = "<group>"; };
+		BCD0F5311D89075700153623 /* SDPhotoBrowser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDPhotoBrowser.m; sourceTree = "<group>"; };
+		BCD0F5321D89075700153623 /* SDPhotoBrowserConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDPhotoBrowserConfig.h; sourceTree = "<group>"; };
+		BCD0F5331D89075700153623 /* SDWaitingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDWaitingView.h; sourceTree = "<group>"; };
+		BCD0F5341D89075700153623 /* SDWaitingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDWaitingView.m; sourceTree = "<group>"; };
+		BCD0F5381D89076F00153623 /* SDPhotoGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDPhotoGroup.h; sourceTree = "<group>"; };
+		BCD0F5391D89076F00153623 /* SDPhotoGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDPhotoGroup.m; sourceTree = "<group>"; };
+		BCD0F53B1D89089C00153623 /* SDPhotoItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDPhotoItem.h; sourceTree = "<group>"; };
+		BCD0F53C1D89089C00153623 /* SDPhotoItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDPhotoItem.m; sourceTree = "<group>"; };
+		BCD0F5431D89320A00153623 /* NewsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsViewController.h; sourceTree = "<group>"; };
+		BCD0F5441D89320A00153623 /* NewsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsViewController.m; sourceTree = "<group>"; };
+		BCD0F5471D89323100153623 /* MyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyViewController.h; sourceTree = "<group>"; };
+		BCD0F5481D89323100153623 /* MyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyViewController.m; sourceTree = "<group>"; };
+		BCD0F54A1D89385800153623 /* NSString+XTAdd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+XTAdd.h"; sourceTree = "<group>"; };
+		BCD0F54B1D89385800153623 /* NSString+XTAdd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+XTAdd.m"; sourceTree = "<group>"; };
+		BCE2A8B11D8E430400104BC5 /* UITableView+HYBCacheHeight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+HYBCacheHeight.h"; sourceTree = "<group>"; };
+		BCE2A8B21D8E430400104BC5 /* UITableView+HYBCacheHeight.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+HYBCacheHeight.m"; sourceTree = "<group>"; };
+		BCE2A8B31D8E430400104BC5 /* UITableViewCell+HYBMasonryAutoCellHeight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableViewCell+HYBMasonryAutoCellHeight.h"; sourceTree = "<group>"; };
+		BCE2A8B41D8E430400104BC5 /* UITableViewCell+HYBMasonryAutoCellHeight.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableViewCell+HYBMasonryAutoCellHeight.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,8 +162,12 @@
 		B938A8601D8837D900A4F636 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				BCD0F53B1D89089C00153623 /* SDPhotoItem.h */,
+				BCD0F53C1D89089C00153623 /* SDPhotoItem.m */,
 				B938A8681D88385700A4F636 /* CommonModel.h */,
 				B938A8691D88385700A4F636 /* CommonModel.m */,
+				BCD0F52A1D88F20A00153623 /* User.h */,
+				BCD0F52B1D88F20A00153623 /* User.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -139,6 +177,8 @@
 			children = (
 				B938A8651D88380900A4F636 /* CommonTableViewCell.h */,
 				B938A8661D88380900A4F636 /* CommonTableViewCell.m */,
+				BCD0F5381D89076F00153623 /* SDPhotoGroup.h */,
+				BCD0F5391D89076F00153623 /* SDPhotoGroup.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -168,6 +208,8 @@
 		BC8394D21D87BF3D007130A9 /* XTWeibo */ = {
 			isa = PBXGroup;
 			children = (
+				BCD0F5461D89322200153623 /* My */,
+				BCD0F5421D89320400153623 /* News */,
 				BC8395131D87F1DF007130A9 /* Tool */,
 				BC83950C1D87EFC7007130A9 /* Home */,
 				BC8395081D87E479007130A9 /* Login */,
@@ -180,7 +222,6 @@
 				BC8394E11D87BF3D007130A9 /* LaunchScreen.storyboard */,
 				BC8394E41D87BF3D007130A9 /* Info.plist */,
 				BC8394D31D87BF3D007130A9 /* Supporting Files */,
-				BC8395071D87D64B007130A9 /* XTWeiboPrefixHeader.pch */,
 			);
 			path = XTWeibo;
 			sourceTree = "<group>";
@@ -188,6 +229,7 @@
 		BC8394D31D87BF3D007130A9 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				BC8395071D87D64B007130A9 /* XTWeiboPrefixHeader.pch */,
 				BC8394D41D87BF3D007130A9 /* main.m */,
 			);
 			name = "Supporting Files";
@@ -233,10 +275,58 @@
 		BC8395131D87F1DF007130A9 /* Tool */ = {
 			isa = PBXGroup;
 			children = (
+				BCE2A8B01D8E430400104BC5 /* HYBMasonryAutoCellHeight */,
+				BCD0F52D1D89075700153623 /* SDPhotoBrowser */,
 				BC8395141D87F2A4007130A9 /* XTNetwork.h */,
 				BC8395151D87F2A4007130A9 /* XTNetwork.m */,
+				BCD0F54A1D89385800153623 /* NSString+XTAdd.h */,
+				BCD0F54B1D89385800153623 /* NSString+XTAdd.m */,
 			);
 			path = Tool;
+			sourceTree = "<group>";
+		};
+		BCD0F52D1D89075700153623 /* SDPhotoBrowser */ = {
+			isa = PBXGroup;
+			children = (
+				BCD0F52E1D89075700153623 /* SDBrowserImageView.h */,
+				BCD0F52F1D89075700153623 /* SDBrowserImageView.m */,
+				BCD0F5301D89075700153623 /* SDPhotoBrowser.h */,
+				BCD0F5311D89075700153623 /* SDPhotoBrowser.m */,
+				BCD0F5321D89075700153623 /* SDPhotoBrowserConfig.h */,
+				BCD0F5331D89075700153623 /* SDWaitingView.h */,
+				BCD0F5341D89075700153623 /* SDWaitingView.m */,
+			);
+			name = SDPhotoBrowser;
+			path = "../../../../../SDPhotoBrowser-master-2/SDPhotoBrowser/SDPhotoBrowser";
+			sourceTree = "<group>";
+		};
+		BCD0F5421D89320400153623 /* News */ = {
+			isa = PBXGroup;
+			children = (
+				BCD0F5431D89320A00153623 /* NewsViewController.h */,
+				BCD0F5441D89320A00153623 /* NewsViewController.m */,
+			);
+			path = News;
+			sourceTree = "<group>";
+		};
+		BCD0F5461D89322200153623 /* My */ = {
+			isa = PBXGroup;
+			children = (
+				BCD0F5471D89323100153623 /* MyViewController.h */,
+				BCD0F5481D89323100153623 /* MyViewController.m */,
+			);
+			path = My;
+			sourceTree = "<group>";
+		};
+		BCE2A8B01D8E430400104BC5 /* HYBMasonryAutoCellHeight */ = {
+			isa = PBXGroup;
+			children = (
+				BCE2A8B11D8E430400104BC5 /* UITableView+HYBCacheHeight.h */,
+				BCE2A8B21D8E430400104BC5 /* UITableView+HYBCacheHeight.m */,
+				BCE2A8B31D8E430400104BC5 /* UITableViewCell+HYBMasonryAutoCellHeight.h */,
+				BCE2A8B41D8E430400104BC5 /* UITableViewCell+HYBMasonryAutoCellHeight.m */,
+			);
+			path = HYBMasonryAutoCellHeight;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -420,14 +510,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BCD0F53D1D89089C00153623 /* SDPhotoItem.m in Sources */,
 				BC83950B1D87E48B007130A9 /* LoginViewController.m in Sources */,
+				BCD0F5491D89323100153623 /* MyViewController.m in Sources */,
 				BC8394DB1D87BF3D007130A9 /* ViewController.m in Sources */,
+				BCD0F52C1D88F20A00153623 /* User.m in Sources */,
+				BCD0F54C1D89385800153623 /* NSString+XTAdd.m in Sources */,
 				B938A86A1D88385700A4F636 /* CommonModel.m in Sources */,
+				BCD0F5361D89075700153623 /* SDPhotoBrowser.m in Sources */,
+				BCD0F5351D89075700153623 /* SDBrowserImageView.m in Sources */,
 				B938A8641D8837F100A4F636 /* HomePageViewController.m in Sources */,
 				B938A8671D88380900A4F636 /* CommonTableViewCell.m in Sources */,
+				BCD0F53A1D89076F00153623 /* SDPhotoGroup.m in Sources */,
+				BCE2A8B61D8E430400104BC5 /* UITableViewCell+HYBMasonryAutoCellHeight.m in Sources */,
 				BC8395161D87F2A4007130A9 /* XTNetwork.m in Sources */,
 				BC8394D81D87BF3D007130A9 /* AppDelegate.m in Sources */,
+				BCD0F5451D89320A00153623 /* NewsViewController.m in Sources */,
+				BCE2A8B51D8E430400104BC5 /* UITableView+HYBCacheHeight.m in Sources */,
 				BC8394D51D87BF3D007130A9 /* main.m in Sources */,
+				BCD0F5371D89075700153623 /* SDWaitingView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -571,7 +672,7 @@
 			baseConfigurationReference = 1CF959AE7C241F6E3C6721F3 /* Pods-XTWeibo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				GCC_PREFIX_HEADER = /Users/summerxx/Desktop/GitHubRepo/weibo/XTWeibo/XTWeibo/XTWeiboPrefixHeader.pch;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/XTWeibo/XTWeiboPrefixHeader.pch";
 				INFOPLIST_FILE = XTWeibo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -585,7 +686,7 @@
 			baseConfigurationReference = 1237CEF09411E85B15A98D69 /* Pods-XTWeibo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				GCC_PREFIX_HEADER = /Users/summerxx/Desktop/GitHubRepo/weibo/XTWeibo/XTWeibo/XTWeiboPrefixHeader.pch;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/XTWeibo/XTWeiboPrefixHeader.pch";
 				INFOPLIST_FILE = XTWeibo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

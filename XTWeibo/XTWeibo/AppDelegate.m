@@ -9,8 +9,11 @@
 #import "AppDelegate.h"
 #import "LoginViewController.h"
 #import "HomePageViewController.h"
-@interface AppDelegate ()<WeiboSDKDelegate>
+#import "NewsViewController.h"
+#import "MyViewController.h"
 
+@interface AppDelegate ()<WeiboSDKDelegate>
+@property (nonatomic, strong) UITabBarController *tabVC;
 @end
 
 @implementation AppDelegate
@@ -21,12 +24,32 @@
     
     [WeiboSDK enableDebugMode:YES];
     [WeiboSDK registerApp:WEI_APP_KEY];
+    
+    _tabVC = [[UITabBarController alloc] init];
+    
+    // 首页
+    HomePageViewController *homeVC = [[HomePageViewController alloc] init];
+    UINavigationController *homeNavVC = [[UINavigationController alloc] initWithRootViewController:homeVC];
+    homeVC.title = @"首页";
+    // 消息
+    NewsViewController *newsVC = [[NewsViewController alloc] init];
+    UINavigationController *newsNavVC = [[UINavigationController alloc] initWithRootViewController:newsVC];
+    newsVC.title = @"消息";
+    // 我的
+    MyViewController *myVC = [[MyViewController alloc] init];
+    UINavigationController *myNavVC = [[UINavigationController alloc] initWithRootViewController:myVC];
+    myVC.title = @"我的";
+    
+    _tabVC.viewControllers = @[homeNavVC, newsNavVC, myNavVC];
+    
+    
     // accessToken 为空, 证明没有登陆过
     if ([[NSUserDefaults standardUserDefaults] objectForKey:ACCESS_TOKEN] == nil) {
         // 根视图为登陆VC
-        self.window.rootViewController = [LoginViewController new];
+//        self.window.rootViewController = [LoginViewController new];
+        self.window.rootViewController = _tabVC;
     }else{
-        self.window.rootViewController = [HomePageViewController new];
+        self.window.rootViewController = _tabVC;
     }
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(dissMissLoginVC) name:DISS_MISS_VC object:nil];
     return YES;
@@ -34,7 +57,7 @@
 // 登陆成功进行切换根视图
 - (void)dissMissLoginVC
 {
-    self.window.rootViewController = [HomePageViewController new];
+    self.window.rootViewController = _tabVC;
 }
 #pragma mark - 
 - (void)didReceiveWeiboRequest:(WBBaseRequest *)request
@@ -78,6 +101,7 @@
                 [[NSUserDefaults standardUserDefaults] setObject:requestUserInfo forKey:REQUEST_USER_INFO];
                 [[NSUserDefaults standardUserDefaults] synchronize];
                 // 打印
+                NSLog(@"accessToken =%@", accessToken);
                 NSLog(@"userId = %@", userId);
                 NSLog(@"Message = %@", message);
                 // 发通知

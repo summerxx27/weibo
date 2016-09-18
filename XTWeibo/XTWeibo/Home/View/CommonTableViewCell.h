@@ -8,7 +8,18 @@
 
 #import <UIKit/UIKit.h>
 #import "CommonModel.h"
+#import "User.h"
+
+// 图片浏览
+#import "SDPhotoGroup.h"
 @interface CommonTableViewCell : UITableViewCell
-@property (nonatomic, strong) CommonModel *dataModel;
+@property (nonatomic, strong) SDPhotoGroup *photosGroup;
+//@property (nonatomic, strong) CommonModel *dataModel;
+//@property (nonatomic, strong) User *user;
 @property (nonatomic, strong) UIImageView *headerImageView; // 头像
+@property (nonatomic, strong) UILabel *labelName;           // 昵称
+@property (nonatomic, strong) UILabel *labelTime;           // 时间
+@property (nonatomic, strong) UILabel *labelText;           // 文本
+
+- (void)configCellWithModel:(CommonModel *)model user:(User *)userModel;
 @end
