@@ -32,6 +32,7 @@
 		BCD0F54C1D89385800153623 /* NSString+XTAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = BCD0F54B1D89385800153623 /* NSString+XTAdd.m */; };
 		BCE2A8B51D8E430400104BC5 /* UITableView+HYBCacheHeight.m in Sources */ = {isa = PBXBuildFile; fileRef = BCE2A8B21D8E430400104BC5 /* UITableView+HYBCacheHeight.m */; };
 		BCE2A8B61D8E430400104BC5 /* UITableViewCell+HYBMasonryAutoCellHeight.m in Sources */ = {isa = PBXBuildFile; fileRef = BCE2A8B41D8E430400104BC5 /* UITableViewCell+HYBMasonryAutoCellHeight.m */; };
+		BCE50BD31D928E80001688B8 /* XTWBStatusHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = BCE50BD21D928E80001688B8 /* XTWBStatusHelper.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -105,6 +106,8 @@
 		BCE2A8B21D8E430400104BC5 /* UITableView+HYBCacheHeight.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+HYBCacheHeight.m"; sourceTree = "<group>"; };
 		BCE2A8B31D8E430400104BC5 /* UITableViewCell+HYBMasonryAutoCellHeight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableViewCell+HYBMasonryAutoCellHeight.h"; sourceTree = "<group>"; };
 		BCE2A8B41D8E430400104BC5 /* UITableViewCell+HYBMasonryAutoCellHeight.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableViewCell+HYBMasonryAutoCellHeight.m"; sourceTree = "<group>"; };
+		BCE50BD11D928E80001688B8 /* XTWBStatusHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XTWBStatusHelper.h; sourceTree = "<group>"; };
+		BCE50BD21D928E80001688B8 /* XTWBStatusHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XTWBStatusHelper.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -295,6 +298,8 @@
 				BCD0F54A1D89385800153623 /* NSString+XTAdd.h */,
 				BCD0F54B1D89385800153623 /* NSString+XTAdd.m */,
 				B9F287CD1D8EBDE700E90C8D /* SDPhotoBrowser */,
+				BCE50BD11D928E80001688B8 /* XTWBStatusHelper.h */,
+				BCE50BD21D928E80001688B8 /* XTWBStatusHelper.m */,
 			);
 			path = Tool;
 			sourceTree = "<group>";
@@ -512,6 +517,7 @@
 			files = (
 				B9F287D51D8EBDE700E90C8D /* SDBrowserImageView.m in Sources */,
 				BCD0F53D1D89089C00153623 /* SDPhotoItem.m in Sources */,
+				BCE50BD31D928E80001688B8 /* XTWBStatusHelper.m in Sources */,
 				BC83950B1D87E48B007130A9 /* LoginViewController.m in Sources */,
 				BCD0F5491D89323100153623 /* MyViewController.m in Sources */,
 				BC8394DB1D87BF3D007130A9 /* ViewController.m in Sources */,

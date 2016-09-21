@@ -12,7 +12,6 @@
 #import "CommonModel.h"
 #import "User.h"
 
-// 图片浏览
 #import "SDPhotoItem.h"
 #define cellID @"cellID"
 @interface HomePageViewController ()<UITableViewDelegate, UITableViewDataSource>
@@ -20,6 +19,7 @@
 @property (nonatomic, strong) NSMutableArray *dataArray;
 @property (nonatomic, strong) NSMutableArray *userArray;
 @property (nonatomic, assign) NSInteger page;
+@property (nonatomic, assign) LoadType type;
 @end
 
 @implementation HomePageViewController
@@ -28,6 +28,8 @@
     self = [super init];
     if (self) {
         self.page = 1;
+        // 默认下拉刷新
+        self.type = NewDataStyle;
     }
     return self;
 }
@@ -68,10 +70,26 @@
 }
 - (void)reqNetwork
 {
+    switch (self.type) {
+        case NewDataStyle:
+        {
+            // 加载新数据清空数组
+            self.dataArray = nil;
+            self.userArray = nil;
+        }
+            break;
+        case LoadMoreStyle:
+        {
+            
+        }
+            break;
+        default:
+            break;
+    }
     // accessToken = @"2.00yOHsNEegFVBEa4756136060YytgK"
-//    NSString *accessToken = [[NSUserDefaults standardUserDefaults] objectForKey:ACCESS_TOKEN];
-    NSString *url = [NSString stringWithFormat:WEIBO_STATUSES_FRIENDS, @"2.00yOHsNEegFVBEa4756136060YytgK", (long)self.page];
-    NSLog(@"===========================================%@", url);
+    NSString *accessToken = [[NSUserDefaults standardUserDefaults] objectForKey:ACCESS_TOKEN];
+    NSString *url = [NSString stringWithFormat:WEIBO_STATUSES_FRIENDS, accessToken, (long)self.page];
+    NSLog(@"%@ %@", url, @"hahah");
     [XTNetwork XTNetworkRequestWithURL:url parameter:nil methods:GET successResult:^(id result) {
         if ([result isKindOfClass:[NSDictionary class]]) {
             NSMutableArray *statisesArray = [result objectForKey:@"statuses"];
@@ -170,11 +188,13 @@
 }
 - (void)loadNewData
 {
+    _page = 1;
     [self reqNetwork];
 }
 - (void)loadMoreData
 {
     _page ++;
+    self.type = LoadMoreStyle;
     [self reqNetwork];
 }
 @end

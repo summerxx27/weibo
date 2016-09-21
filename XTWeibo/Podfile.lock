@@ -21,6 +21,7 @@ PODS:
   - SDWebImage (3.7.5):
     - SDWebImage/Core (= 3.7.5)
   - SDWebImage/Core (3.7.5)
+  - TTTAttributedLabel (2.0.0)
   - WeiboSDK (3.1.4)
   - XTAlertViewController (1.0.1)
   - YYModel (1.0.4)
@@ -32,6 +33,7 @@ DEPENDENCIES:
   - MBProgressHUD (~> 0.9.1)
   - MJRefresh (= 3.1.9)
   - SDWebImage (= 3.7.5)
+  - TTTAttributedLabel (~> 2.0.0)
   - WeiboSDK (from `https://github.com/sinaweibosdk/weibo_ios_sdk.git`)
   - XTAlertViewController (~> 1.0.1)
   - YYModel
@@ -52,10 +54,11 @@ SPEC CHECKSUMS:
   MBProgressHUD: 1569cf7ace17a8bac47aabfbb8580a49690386d1
   MJRefresh: c5f1f1653e5a1b932c90f78074f2bc86f3f9bd5e
   SDWebImage: 69c6303e3348fba97e03f65d65d4fbc26740f461
+  TTTAttributedLabel: 8cffe8e127e4e82ff3af1e5386d4cd0ad000b656
   WeiboSDK: bceab625ec59b7039ba721cc4ba9f5868804f63e
   XTAlertViewController: 578cf12e607bb7714445280e01a5f09f5128196e
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
 
-PODFILE CHECKSUM: da0c6be68a740248a826024e5a9af6452e30bc42
+PODFILE CHECKSUM: ad9a54524b01e77a3a7b9aebe9297e465a5a704a
 
 COCOAPODS: 1.1.0.beta.1

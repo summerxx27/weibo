@@ -7,6 +7,7 @@
 //
 
 #import "CommonTableViewCell.h"
+#import "XTWBStatusHelper.h"
 #define SPACE 10
 @implementation CommonTableViewCell
 
@@ -53,13 +54,15 @@
         _labelTime.textColor = [UIColor lightGrayColor];
         _labelTime.backgroundColor = [UIColor greenColor];
         // 发布的内容
-        // 文本显示多宽
-        self.labelText.preferredMaxLayoutWidth = SCREEN_W - 30;
+        // 视图是多宽的 进行相应的设置
+        self.labelText.preferredMaxLayoutWidth = SCREEN_W - 63;
         [_labelText mas_makeConstraints:^(MASConstraintMaker *make) {
             make.top.equalTo(self.labelTime.mas_bottom).with.offset(SPACE);
             make.left.right.mas_equalTo(self.labelTime);
         }];
         _labelText.backgroundColor = [UIColor lightGrayColor];
+        // 自动检测链接
+        _labelText.enabledTextCheckingTypes = NSTextCheckingTypeLink;
         _labelText.numberOfLines = 0;
         // 图片浏览器
         [_photosGroup mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -96,7 +99,7 @@
 - (UILabel *)labelText
 {
     if (!_labelText) {
-        _labelText = [[UILabel alloc] init];
+        _labelText = [TTTAttributedLabel new];
     }
     return _labelText;
 }
@@ -115,7 +118,23 @@
     [_headerImageView sd_setImageWithURL:[NSURL URLWithString:userModel.profile_image_url] placeholderImage:nil];
     _labelName.text = userModel.name;
     _labelTime.text = model.created_at;
+    // 发布的内容
     _labelText.text = model.text;
+    
+    
+    // 话题检测
+    NSArray *results = [[XTWBStatusHelper regexTopic] matchesInString:model.text options:0 range:NSMakeRange(0, model.text.length)];
+    for (NSTextCheckingResult *result in results) {
+        // 话题范围
+        NSLog(@"range === %@", NSStringFromRange(result.range));
+        [_labelText addLinkWithTextCheckingResult:result];
+    }
+    // 表情检测
+    NSArray *results1 = [[XTWBStatusHelper regexEmoticon] matchesInString:model.text options:0 range:NSMakeRange(0, model.text.length)];
+    for (NSTextCheckingResult *result in results1) {
+        [_labelText addLinkWithTextCheckingResult:result];
+    }
+    
     // 计算Photo的height
     CGFloat pg_Height = 0.0;
     if (model.pic_urls.count > 1 && model.pic_urls.count <= 3) {
@@ -140,6 +159,7 @@
         make.height.mas_equalTo(pg_Height);
     }];
 }
+
 -(void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
 

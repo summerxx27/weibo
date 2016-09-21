@@ -29,6 +29,11 @@
 #import <SDWebImage/UIImageView+WebCache.h>
 #import "NSString+XTAdd.h"
 #import "UITableViewCell+HYBMasonryAutoCellHeight.h"
+#import <TTTAttributedLabel.h>
+// iOS10 log
+#ifndef __OPTIMIZE__
+#define NSLog(...) printf("%f %s\n",[[NSDate date]timeIntervalSince1970],[[NSString stringWithFormat:__VA_ARGS__]UTF8String]);
+#endif
 // 接口
 /**
  access_token	true	string	采用OAuth授权方式为必填参数，OAuth授权后获得。

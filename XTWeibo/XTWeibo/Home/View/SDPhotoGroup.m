@@ -37,7 +37,11 @@
     [photoItemArray enumerateObjectsUsingBlock:^(SDPhotoItem *obj, NSUInteger idx, BOOL *stop) {
         UIButton *btn = [[UIButton alloc] init];
 //        btn.backgroundColor = [UIColor colorWithRed:0.3026 green:0.8168 blue:1.0 alpha:1.0];
-        [btn sd_setImageWithURL:[NSURL URLWithString:obj.thumbnail_pic] forState:UIControlStateNormal];
+        // thumbnail_pic replace large
+        //
+        NSString *large_pic = [obj.thumbnail_pic stringByReplacingCharactersInRange:NSMakeRange(22, 9) withString:@"large"];
+        NSLog(@"%@", large_pic);
+        [btn sd_setImageWithURL:[NSURL URLWithString:large_pic] forState:UIControlStateNormal];
         btn.tag = idx;
         [btn addTarget:self action:@selector(click:) forControlEvents:UIControlEventTouchUpInside];
         [self addSubview:btn];

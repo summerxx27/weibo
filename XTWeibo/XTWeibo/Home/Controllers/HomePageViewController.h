@@ -7,6 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+typedef NS_ENUM(NSInteger, LoadType) {
+    NewDataStyle     = 0,
+    LoadMoreStyle    = 1,
+};
+
 
 @interface HomePageViewController : UIViewController
 

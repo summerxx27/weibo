@@ -7,5 +7,6 @@ pod 'SDWebImage','3.7.5'
 pod 'FDFullscreenPopGesture','1.1'
 pod 'XTAlertViewController', '~> 1.0.1'
 pod "WeiboSDK", :git => "https://github.com/sinaweibosdk/weibo_ios_sdk.git"
-pod 'YYModel' 
+pod 'YYModel'
+pod 'TTTAttributedLabel', '~> 2.0.0' 
 end
