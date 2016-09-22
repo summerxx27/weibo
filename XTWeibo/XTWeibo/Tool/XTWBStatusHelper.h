@@ -16,5 +16,5 @@
 /// 表情正则 例如 [偷笑]
 + (NSRegularExpression *)regexEmoticon;
 
-
++ (UIImage *)ImageCropping:(NSData *)data;
 @end

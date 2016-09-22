@@ -11,7 +11,7 @@
 #import "User.h"
 // 图片浏览
 #import "SDPhotoGroup.h"
-@interface CommonTableViewCell : UITableViewCell
+@interface CommonTableViewCell : UITableViewCell<TTTAttributedLabelDelegate>
 @property (nonatomic, strong) SDPhotoGroup *photosGroup;
 //@property (nonatomic, strong) CommonModel *dataModel;
 //@property (nonatomic, strong) User *user;

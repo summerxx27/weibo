@@ -87,8 +87,8 @@
             break;
     }
     // accessToken = @"2.00yOHsNEegFVBEa4756136060YytgK"
-    NSString *accessToken = [[NSUserDefaults standardUserDefaults] objectForKey:ACCESS_TOKEN];
-    NSString *url = [NSString stringWithFormat:WEIBO_STATUSES_FRIENDS, accessToken, (long)self.page];
+//    NSString *accessToken = [[NSUserDefaults standardUserDefaults] objectForKey:ACCESS_TOKEN];
+    NSString *url = [NSString stringWithFormat:WEIBO_STATUSES_FRIENDS, @"2.00yOHsNEegFVBEa4756136060YytgK", (long)self.page];
     NSLog(@"%@ %@", url, @"hahah");
     [XTNetwork XTNetworkRequestWithURL:url parameter:nil methods:GET successResult:^(id result) {
         if ([result isKindOfClass:[NSDictionary class]]) {
@@ -141,12 +141,18 @@
 #pragma mark - 返回 Cell的高度
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    CommonModel *model = self.dataArray[indexPath.row];
+    User *user = self.userArray[indexPath.row];
     CGFloat cellHeight = [CommonTableViewCell hyb_heightForTableView:tableView config:^(UITableViewCell *sourceCell) {
         //
         CommonTableViewCell *cell = (CommonTableViewCell *)sourceCell;
-        [cell configCellWithModel:self.dataArray[indexPath.row] user:self.userArray[indexPath.row]];
+        [cell configCellWithModel:model user:user];
+    } cache:^NSDictionary *{
+        return @{kHYBCacheUniqueKey: [NSString stringWithFormat:@"%@", model.id],
+                 kHYBCacheStateKey : @"",
+                 kHYBRecalculateForStateKey : @(NO) // 标识不用重新更新
+                 };
     }];
-    // 返回高度
     return cellHeight;
 }
 - (void)didReceiveMemoryWarning {

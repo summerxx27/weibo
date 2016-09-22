@@ -26,6 +26,7 @@
              // Request the corresponding format
              manager.requestSerializer = [AFJSONRequestSerializer serializer];
              manager.responseSerializer = [AFJSONResponseSerializer serializer];
+             manager.responseSerializer = [AFJSONResponseSerializer serializerWithReadingOptions:NSJSONReadingAllowFragments];
              // Request type
              [manager.responseSerializer setAcceptableContentTypes:[NSSet setWithObjects:@"application/json", @"text/json", @"text/javascript",@"text/html",@"text/css", @"text/plain",@"application/x-javascript", nil]];
              MethodsType type = methods;
