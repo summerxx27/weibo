@@ -19,6 +19,8 @@
 // frame
 #define SCREEN_W [UIScreen mainScreen].bounds.size.width
 #define SCREEN_H [UIScreen mainScreen].bounds.size.height
+// 机型
+#define IS_IPHONE5 ( fabs( ( double )[ [ UIScreen mainScreen ] bounds ].size.height - ( double )568 ) < DBL_EPSILON )
 // import
 #import <WeiboSDK.h>
 #import <AFNetworking.h>
@@ -30,17 +32,14 @@
 #import "NSString+XTAdd.h"
 #import "UITableViewCell+HYBMasonryAutoCellHeight.h"
 #import <TTTAttributedLabel.h>
+#import "UIView+XTAdd.h"
+#import "UIViewController+XTAdd.h"
 // iOS10 log
 #ifndef __OPTIMIZE__
-#define NSLog(...) printf("%f %s\n",[[NSDate date]timeIntervalSince1970],[[NSString stringWithFormat:__VA_ARGS__]UTF8String]);
+#define XTNSLog(...) printf("%f %s\n",[[NSDate date]timeIntervalSince1970],[[NSString stringWithFormat:__VA_ARGS__]UTF8String]);
 #endif
-// 接口
-/**
- access_token	true	string	采用OAuth授权方式为必填参数，OAuth授权后获得。
- count          false	int	单页返回的记录条数，默认为50。
- page           false	int	返回结果的页码，默认为1。
- base_app       false	int	是否只获取当前应用的数据。0为否（所有数据），1为是（仅当前应用），默认为0。
- */
-#define WEIBO_STATUSES_PUBLIC @"https://api.weibo.com/2/statuses/public_timeline.json?access_token=%@&count=50&base_app=0&page=1"
-#define WEIBO_STATUSES_FRIENDS @"https://api.weibo.com/2/statuses/friends_timeline.json?access_token=%@&since_id=0&max_id=0&count=10&base_app=0&feature=0&trim_user=0&page=%ld"
+#define WEIBO_STATUSES_PUBLIC @"https://api.weibo.com/2/statuses/public_timeline.json?access_token=%@&count=50&base_app=0&page=1" /* 公共微博接口 */
+#define WEIBO_STATUSES_FRIENDS @"https://api.weibo.com/2/statuses/friends_timeline.json?access_token=%@&since_id=0&max_id=0&count=10&base_app=0&feature=0&trim_user=0&page=%ld" /* 你关注的人微博 */
+
+
 #endif /* XTWeiboPrefixHeader_pch */

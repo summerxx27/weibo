@@ -24,6 +24,12 @@
 		BC8394F91D87BF3E007130A9 /* XTWeiboUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = BC8394F81D87BF3E007130A9 /* XTWeiboUITests.m */; };
 		BC83950B1D87E48B007130A9 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC83950A1D87E48B007130A9 /* LoginViewController.m */; };
 		BC8395161D87F2A4007130A9 /* XTNetwork.m in Sources */ = {isa = PBXBuildFile; fileRef = BC8395151D87F2A4007130A9 /* XTNetwork.m */; };
+		BCCE883E1D94BD0900C066E6 /* UIView+XTAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = BCCE883D1D94BD0900C066E6 /* UIView+XTAdd.m */; };
+		BCCE88411D94BE9B00C066E6 /* UIViewController+XTAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = BCCE88401D94BE9B00C066E6 /* UIViewController+XTAdd.m */; };
+		BCCE88441D94D01A00C066E6 /* EmoticonWeibo.bundle in Resources */ = {isa = PBXBuildFile; fileRef = BCCE88431D94D01A00C066E6 /* EmoticonWeibo.bundle */; };
+		BCCE884D1D950C0500C066E6 /* libWeChatSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BCCE88471D950C0400C066E6 /* libWeChatSDK.a */; };
+		BCCE884E1D950C0500C066E6 /* read_me.txt in Resources */ = {isa = PBXBuildFile; fileRef = BCCE88481D950C0500C066E6 /* read_me.txt */; };
+		BCCE884F1D950C0500C066E6 /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = BCCE88491D950C0500C066E6 /* README.txt */; };
 		BCD0F52C1D88F20A00153623 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = BCD0F52B1D88F20A00153623 /* User.m */; };
 		BCD0F53A1D89076F00153623 /* SDPhotoGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = BCD0F5391D89076F00153623 /* SDPhotoGroup.m */; };
 		BCD0F53D1D89089C00153623 /* SDPhotoItem.m in Sources */ = {isa = PBXBuildFile; fileRef = BCD0F53C1D89089C00153623 /* SDPhotoItem.m */; };
@@ -90,6 +96,17 @@
 		BC83950A1D87E48B007130A9 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		BC8395141D87F2A4007130A9 /* XTNetwork.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XTNetwork.h; sourceTree = "<group>"; };
 		BC8395151D87F2A4007130A9 /* XTNetwork.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XTNetwork.m; sourceTree = "<group>"; };
+		BCCE883C1D94BD0900C066E6 /* UIView+XTAdd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+XTAdd.h"; sourceTree = "<group>"; };
+		BCCE883D1D94BD0900C066E6 /* UIView+XTAdd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+XTAdd.m"; sourceTree = "<group>"; };
+		BCCE883F1D94BE9B00C066E6 /* UIViewController+XTAdd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+XTAdd.h"; sourceTree = "<group>"; };
+		BCCE88401D94BE9B00C066E6 /* UIViewController+XTAdd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+XTAdd.m"; sourceTree = "<group>"; };
+		BCCE88431D94D01A00C066E6 /* EmoticonWeibo.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = EmoticonWeibo.bundle; sourceTree = "<group>"; };
+		BCCE88471D950C0400C066E6 /* libWeChatSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libWeChatSDK.a; sourceTree = "<group>"; };
+		BCCE88481D950C0500C066E6 /* read_me.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = read_me.txt; sourceTree = "<group>"; };
+		BCCE88491D950C0500C066E6 /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
+		BCCE884A1D950C0500C066E6 /* WechatAuthSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WechatAuthSDK.h; sourceTree = "<group>"; };
+		BCCE884B1D950C0500C066E6 /* WXApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApi.h; sourceTree = "<group>"; };
+		BCCE884C1D950C0500C066E6 /* WXApiObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApiObject.h; sourceTree = "<group>"; };
 		BCD0F52A1D88F20A00153623 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
 		BCD0F52B1D88F20A00153623 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		BCD0F5381D89076F00153623 /* SDPhotoGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDPhotoGroup.h; sourceTree = "<group>"; };
@@ -115,6 +132,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BCCE884D1D950C0500C066E6 /* libWeChatSDK.a in Frameworks */,
 				389B9BCFA4F26DE10480F7B0 /* libPods-XTWeibo.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -225,6 +243,8 @@
 		BC8394D21D87BF3D007130A9 /* XTWeibo */ = {
 			isa = PBXGroup;
 			children = (
+				BCCE88451D950B3B00C066E6 /* TLIbs */,
+				BCCE88421D94D00900C066E6 /* Resources */,
 				BCD0F5461D89322200153623 /* My */,
 				BCD0F5421D89320400153623 /* News */,
 				BC8395131D87F1DF007130A9 /* Tool */,
@@ -300,8 +320,41 @@
 				B9F287CD1D8EBDE700E90C8D /* SDPhotoBrowser */,
 				BCE50BD11D928E80001688B8 /* XTWBStatusHelper.h */,
 				BCE50BD21D928E80001688B8 /* XTWBStatusHelper.m */,
+				BCCE883C1D94BD0900C066E6 /* UIView+XTAdd.h */,
+				BCCE883D1D94BD0900C066E6 /* UIView+XTAdd.m */,
+				BCCE883F1D94BE9B00C066E6 /* UIViewController+XTAdd.h */,
+				BCCE88401D94BE9B00C066E6 /* UIViewController+XTAdd.m */,
 			);
 			path = Tool;
+			sourceTree = "<group>";
+		};
+		BCCE88421D94D00900C066E6 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				BCCE88431D94D01A00C066E6 /* EmoticonWeibo.bundle */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		BCCE88451D950B3B00C066E6 /* TLIbs */ = {
+			isa = PBXGroup;
+			children = (
+				BCCE88461D950C0400C066E6 /* SDKExport */,
+			);
+			path = TLIbs;
+			sourceTree = "<group>";
+		};
+		BCCE88461D950C0400C066E6 /* SDKExport */ = {
+			isa = PBXGroup;
+			children = (
+				BCCE88471D950C0400C066E6 /* libWeChatSDK.a */,
+				BCCE88481D950C0500C066E6 /* read_me.txt */,
+				BCCE88491D950C0500C066E6 /* README.txt */,
+				BCCE884A1D950C0500C066E6 /* WechatAuthSDK.h */,
+				BCCE884B1D950C0500C066E6 /* WXApi.h */,
+				BCCE884C1D950C0500C066E6 /* WXApiObject.h */,
+			);
+			path = SDKExport;
 			sourceTree = "<group>";
 		};
 		BCD0F5421D89320400153623 /* News */ = {
@@ -440,9 +493,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BCCE88441D94D01A00C066E6 /* EmoticonWeibo.bundle in Resources */,
 				BC8394E31D87BF3D007130A9 /* LaunchScreen.storyboard in Resources */,
 				BC8394E01D87BF3D007130A9 /* Assets.xcassets in Resources */,
 				BC8394DE1D87BF3D007130A9 /* Main.storyboard in Resources */,
+				BCCE884F1D950C0500C066E6 /* README.txt in Resources */,
+				BCCE884E1D950C0500C066E6 /* read_me.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -525,11 +581,13 @@
 				B9F287D71D8EBDE700E90C8D /* SDWaitingView.m in Sources */,
 				B9F287D61D8EBDE700E90C8D /* SDPhotoBrowser.m in Sources */,
 				BCD0F54C1D89385800153623 /* NSString+XTAdd.m in Sources */,
+				BCCE88411D94BE9B00C066E6 /* UIViewController+XTAdd.m in Sources */,
 				B938A86A1D88385700A4F636 /* CommonModel.m in Sources */,
 				B938A8641D8837F100A4F636 /* HomePageViewController.m in Sources */,
 				B938A8671D88380900A4F636 /* CommonTableViewCell.m in Sources */,
 				BCD0F53A1D89076F00153623 /* SDPhotoGroup.m in Sources */,
 				BCE2A8B61D8E430400104BC5 /* UITableViewCell+HYBMasonryAutoCellHeight.m in Sources */,
+				BCCE883E1D94BD0900C066E6 /* UIView+XTAdd.m in Sources */,
 				BC8395161D87F2A4007130A9 /* XTNetwork.m in Sources */,
 				BC8394D81D87BF3D007130A9 /* AppDelegate.m in Sources */,
 				BCD0F5451D89320A00153623 /* NewsViewController.m in Sources */,
@@ -683,6 +741,10 @@
 				INFOPLIST_FILE = XTWeibo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/XTWeibo/TLIbs/SDKExport",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = XTWeiboSummerxx.com;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -698,6 +760,10 @@
 				INFOPLIST_FILE = XTWeibo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/XTWeibo/TLIbs/SDKExport",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = XTWeiboSummerxx.com;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
