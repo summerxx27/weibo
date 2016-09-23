@@ -20,6 +20,7 @@
         [self.contentView addSubview:self.labelTime];
         [self.contentView addSubview:self.labelText];
         [self.contentView addSubview:self.photosGroup];
+        [self.contentView addSubview:self.btnShare];
         
         // Masonry布局
         // 头像
@@ -72,6 +73,15 @@
             make.left.equalTo(self.labelText);
             make.width.mas_equalTo(SCREEN_W - 63);
         }];
+        // 分享按钮
+        [_btnShare mas_makeConstraints:^(MASConstraintMaker *make) {
+            //
+            make.top.equalTo(self.photosGroup.mas_bottom).with.offset(SPACE);
+            make.left.right.mas_equalTo(self.photosGroup);
+            make.height.mas_equalTo(@33);
+        }];
+        _btnShare.backgroundColor = [UIColor lightGrayColor];
+        [_btnShare setTitle:@"SHARE" forState:UIControlStateNormal];
     }
     return self;
 }
@@ -111,18 +121,23 @@
     }
     return _photosGroup;
 }
+- (UIButton *)btnShare
+{
+    if (!_btnShare) {
+        _btnShare = [UIButton buttonWithType:UIButtonTypeCustom];
+    }
+    return _btnShare;
+}
 #pragma mark - 赋值
 - (void)configCellWithModel:(CommonModel *)model user:(User *)userModel
 {
     
     // 头像
     [_headerImageView sd_setImageWithURL:[NSURL URLWithString:userModel.profile_image_url] placeholderImage:nil];
-    _labelName.text = [NSString stringWithFormat:@"%@ %@", userModel.name, @"我测试cell的高度是否准确, 我测试cell的高度是否准确"];
-    _labelTime.text = [NSString stringWithFormat:@"%@ %@", model.created_at, @"我测试cell的高度是否准确, 我测试cell的高度是否准确"];;
+    _labelName.text = userModel.name;
+    _labelTime.text = model.created_at;
     // 发布的内容
     _labelText.text = model.text;
-    
-    
     // 话题检测
     NSArray *results = [[XTWBStatusHelper regexTopic] matchesInString:model.text options:0 range:NSMakeRange(0, model.text.length)];
     for (NSTextCheckingResult *result in results) {
@@ -136,7 +151,6 @@
         NSLog(@"range === %@", NSStringFromRange(result.range));
         [_labelText addLinkWithTextCheckingResult:result];
     }
-    
     // 计算Photo的height
     CGFloat pg_Height = 0.0;
     if (model.pic_urls.count > 1 && model.pic_urls.count <= 3) {
@@ -165,7 +179,7 @@
 - (void)attributedLabel:(TTTAttributedLabel *)label
    didSelectLinkWithURL:(NSURL *)url
 {
-    NSLog(@"被点击的url === %@", url);
+    XTNSLog(@"被点击的url === %@", url);
 }
 
 /// 点击长按数据
@@ -179,7 +193,7 @@
 - (void)attributedLabel:(TTTAttributedLabel *)label
 didSelectLinkWithTextCheckingResult:(NSTextCheckingResult *)result
 {
-    NSLog(@"被点击的话题 === %@", NSStringFromRange(result.range))
+    XTNSLog(@"被点击的话题 === %@", NSStringFromRange(result.range))
 
 }
 /// 长按链接的方法
@@ -187,14 +201,14 @@ didSelectLinkWithTextCheckingResult:(NSTextCheckingResult *)result
 didLongPressLinkWithURL:(NSURL *)url
                 atPoint:(CGPoint)point
 {
-    NSLog(@"被长按的url === %@", url);
+    XTNSLog(@"被长按的url === %@", url)
 }
 /// 可以长按的文本
 - (void)attributedLabel:(TTTAttributedLabel *)label
 didLongPressLinkWithTextCheckingResult:(NSTextCheckingResult *)result
                 atPoint:(CGPoint)point
 {
-    NSLog(@"被长按的话题 === %@", NSStringFromRange(result.range))
+    XTNSLog(@"被长按的话题 === %@", NSStringFromRange(result.range))
 }
 
 

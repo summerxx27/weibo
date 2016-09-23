@@ -65,35 +65,34 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reqNetwork) name:REQ_NETWORK object:nil];
     // tableView Add
     [self.view addSubview:self.tableView];
-    // Net
-    [self summerxx_RereshHeader];
+    // 
+    [self summerxx_RereshHeader:self.tableView];
 }
 - (void)reqNetwork
 {
-    switch (self.type) {
-        case NewDataStyle:
-        {
-            // 加载新数据清空数组
-            self.dataArray = nil;
-            self.userArray = nil;
-        }
-            break;
-        case LoadMoreStyle:
-        {
-            
-        }
-            break;
-        default:
-            break;
-    }
-    // accessToken = @"2.00yOHsNEegFVBEa4756136060YytgK"
+//    accessToken = @"2.00yOHsNEegFVBEa4756136060YytgK"
 //    NSString *accessToken = [[NSUserDefaults standardUserDefaults] objectForKey:ACCESS_TOKEN];
     NSString *url = [NSString stringWithFormat:WEIBO_STATUSES_FRIENDS, @"2.00yOHsNEegFVBEa4756136060YytgK", (long)self.page];
-    NSLog(@"%@ %@", url, @"hahah");
+    XTNSLog(@"%@", url);
     [XTNetwork XTNetworkRequestWithURL:url parameter:nil methods:GET successResult:^(id result) {
         if ([result isKindOfClass:[NSDictionary class]]) {
             NSMutableArray *statisesArray = [result objectForKey:@"statuses"];
-            // JSON array -> model array
+            switch (self.type) {
+                case NewDataStyle:
+                {
+                    // 加载新数据清空数组
+                    self.dataArray = nil;
+                    self.userArray = nil;
+                }
+                    break;
+                case LoadMoreStyle:
+                {
+                    
+                }
+                    break;
+                default:
+                    break;
+            }
             for (NSDictionary *dic in statisesArray) {
                 CommonModel *cModel = [CommonModel yy_modelWithDictionary:dic];
                 User *user = [User yy_modelWithDictionary:[dic objectForKey:@"user"]];
@@ -159,9 +158,7 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-#pragma mark - MJ - HeaderRefresh
-- (void)summerxx_RereshHeader
+- (void)summerxx_RereshHeader:(UITableView *)tableView
 {
     // 设置回调（一旦进入刷新状态，就调用target的action，也就是调用self的loadNewData方法）
     MJRefreshNormalHeader *header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadNewData)];
@@ -172,26 +169,22 @@
     // 马上进入刷新状态
     [header beginRefreshing];
     // 设置header
-    self.tableView.mj_header = header;
-    
+    tableView.mj_header = header;
     // 添加默认的上拉刷新
     // 设置回调（一旦进入刷新状态，就调用target的action，也就是调用self的loadMoreData方法）
     MJRefreshAutoNormalFooter *footer = [MJRefreshAutoNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadMoreData)];
-    
     // 设置文字
     [footer setTitle:@"" forState:MJRefreshStateIdle];
     [footer setTitle:@"加载更多" forState:MJRefreshStateRefreshing];
     [footer setTitle:@"没有更多数据" forState:MJRefreshStateNoMoreData];
-    
     // 设置字体
     footer.stateLabel.font = [UIFont systemFontOfSize:15];
-    
     // 设置颜色
     footer.stateLabel.textColor = [UIColor colorWithRed:0.7683 green:0.7683 blue:0.7683 alpha:1.0];
-    
     // 设置footer
-    self.tableView.mj_footer = footer;
+    tableView.mj_footer = footer;
 }
+
 - (void)loadNewData
 {
     _page = 1;

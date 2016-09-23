@@ -19,6 +19,7 @@
 @property (nonatomic, strong) UILabel *labelName;                       // 昵称
 @property (nonatomic, strong) UILabel *labelTime;                       // 时间
 @property (nonatomic, strong) TTTAttributedLabel *labelText;            // 文本
+@property (nonatomic, strong) UIButton *btnShare;                       // 分享按钮
 
 - (void)configCellWithModel:(CommonModel *)model user:(User *)userModel;
 

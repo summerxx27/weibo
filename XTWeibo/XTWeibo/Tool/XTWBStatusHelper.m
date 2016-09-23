@@ -28,6 +28,7 @@
     return regex;
 }
 
+
 + (UIImage *)ImageCropping:(NSData *)data
 {
     // 获取源图
