@@ -9,8 +9,8 @@
 #import "LoginViewController.h"
 
 @interface LoginViewController ()
-@property (nonatomic, strong) UIButton *btnLogin; // 登陆
-
+@property (nonatomic, strong) UIButton *btnLogin;     // 登陆
+@property (nonatomic, strong) UIImageView *bgImageView; // 背景图
 @end
 
 @implementation LoginViewController
@@ -18,7 +18,7 @@
 {
     if (!_btnLogin) {
         _btnLogin = [UIButton buttonWithType:UIButtonTypeCustom];
-        _btnLogin.frame = CGRectMake(0, 0, 50, 50);
+        _btnLogin.frame = CGRectMake(0, 0, 88, 50);
         _btnLogin.center = self.view.center;
         _btnLogin.backgroundColor = [UIColor colorWithRed:0.3055 green:0.5947 blue:1.0 alpha:1.0];
         [_btnLogin setTitle:@"登陆" forState:UIControlStateNormal];
@@ -27,11 +27,25 @@
     }
     return _btnLogin;
 }
+- (UIImageView *)bgImageView
+{
+    if (!_bgImageView) {
+        _bgImageView = [[UIImageView alloc] init];
+    }
+    return _bgImageView;
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor whiteColor];
+    [self.view addSubview:self.bgImageView];
     [self.view addSubview:self.btnLogin];
+    
+    [_bgImageView mas_makeConstraints:^(MASConstraintMaker *make) {
+        //
+        make.top.bottom.left.right.equalTo(self.view).with.offset(0);
+    }];
+    _bgImageView.image = [UIImage imageNamed:@"summer.png"];
 }
 #pragma mark -
 - (void)loginClick:(UIButton *)btn
