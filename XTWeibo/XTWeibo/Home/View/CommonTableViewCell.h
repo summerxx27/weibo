@@ -11,6 +11,9 @@
 #import "User.h"
 // 图片浏览
 #import "SDPhotoGroup.h"
+
+typedef void(^shareBlock)();
+
 @interface CommonTableViewCell : UITableViewCell<TTTAttributedLabelDelegate>
 @property (nonatomic, strong) SDPhotoGroup *photosGroup;
 //@property (nonatomic, strong) CommonModel *dataModel;
@@ -20,7 +23,7 @@
 @property (nonatomic, strong) UILabel *labelTime;                       // 时间
 @property (nonatomic, strong) TTTAttributedLabel *labelText;            // 文本
 @property (nonatomic, strong) UIButton *btnShare;                       // 分享按钮
-
+@property (nonatomic, copy) shareBlock shareBlock;                      // 分享Block
 - (void)configCellWithModel:(CommonModel *)model user:(User *)userModel;
 
 @end

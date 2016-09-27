@@ -11,7 +11,6 @@
 #import "CommonTableViewCell.h"
 #import "CommonModel.h"
 #import "User.h"
-
 #import "SDPhotoItem.h"
 #define cellID @"cellID"
 @interface HomePageViewController ()<UITableViewDelegate, UITableViewDataSource>
@@ -53,6 +52,7 @@
         _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_W, SCREEN_H - 10) style:UITableViewStylePlain];
         _tableView.delegate = self;
         _tableView.dataSource = self;
+        _tableView.tableFooterView = [[UIView alloc] init];
         [_tableView registerClass:[CommonTableViewCell class] forCellReuseIdentifier:cellID];
     }
     return _tableView;
@@ -65,14 +65,16 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reqNetwork) name:REQ_NETWORK object:nil];
     // tableView Add
     [self.view addSubview:self.tableView];
-    // 
-    [self summerxx_RereshHeader:self.tableView];
+    [self summerxx_RefreshHeader:self.tableView];
 }
 - (void)reqNetwork
 {
-//    accessToken = @"2.00yOHsNEegFVBEa4756136060YytgK"
+#warning 模拟器
 //    NSString *accessToken = [[NSUserDefaults standardUserDefaults] objectForKey:ACCESS_TOKEN];
-    NSString *url = [NSString stringWithFormat:WEIBO_STATUSES_FRIENDS, @"2.00yOHsNEegFVBEa4756136060YytgK", (long)self.page];
+//    NSString *url = [NSString stringWithFormat:WEIBO_STATUSES_FRIENDS, @"2.00yOHsNEegFVBEa4756136060YytgK", (long)self.page];
+#warning 真机
+    NSString *accessToken = [[NSUserDefaults standardUserDefaults] objectForKey:ACCESS_TOKEN];
+    NSString *url = [NSString stringWithFormat:WEIBO_STATUSES_FRIENDS, accessToken, (long)self.page];
     XTNSLog(@"%@", url);
     [XTNetwork XTNetworkRequestWithURL:url parameter:nil methods:GET successResult:^(id result) {
         if ([result isKindOfClass:[NSDictionary class]]) {
@@ -106,6 +108,7 @@
             [self.tableView.mj_footer endRefreshing];
         }
     } failResult:^(id error) {
+        [self showHint:@"请求失败"];
     }];
 }
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -135,6 +138,39 @@
     }];
     cell.photosGroup.photoItemArray = [temp copy];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    // 分享按钮
+    cell.shareBlock = ^(){
+        XTNSLog(@"summerxx");
+        NSMutableArray *items = [NSMutableArray array];
+        if (model.pic_urls.count == 0) {
+            // 文字
+            [items addObject:model.text];
+        }else{
+        // 默认情况下，UIActivityViewController 将显示所有可用于所提供内容的服务.
+        for (NSInteger i = 0; i < model.pic_urls.count; i ++) {
+            NSDictionary *dic = [model.pic_urls objectAtIndex:i];
+            NSString *newURL = [dic objectForKey:@"thumbnail_pic"];
+            NSString *large_pic = [newURL stringByReplacingCharactersInRange:NSMakeRange(22, 9) withString:@"large"];
+            NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:large_pic]];
+            UIImage *imagerang = [UIImage imageWithData:data];
+            [items addObject:imagerang];
+            XTNSLog(@"%@", large_pic);
+        }
+        }
+        UIActivityViewController *activity = [[UIActivityViewController alloc] initWithActivityItems:items applicationActivities:nil];
+        activity.completionWithItemsHandler = ^(UIActivityType __nullable activityType, BOOL completed, NSArray * __nullable returnedItems, NSError * __nullable activityError){
+            
+            if (completed == YES) {
+                UIAlertView *a = [[UIAlertView alloc] initWithTitle:@"提示" message:@"分享成功" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
+                [a show];
+            }
+            // com.tencent.xin.sharetimeline
+            XTNSLog(@"%@", activityType);
+            // null
+            XTNSLog(@"%@", returnedItems);
+        };
+        [self presentViewController:activity animated:YES completion:NULL];
+    };
     return cell;
 }
 #pragma mark - 返回 Cell的高度
@@ -158,7 +194,7 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-- (void)summerxx_RereshHeader:(UITableView *)tableView
+- (void)summerxx_RefreshHeader:(UITableView *)tableView
 {
     // 设置回调（一旦进入刷新状态，就调用target的action，也就是调用self的loadNewData方法）
     MJRefreshNormalHeader *header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadNewData)];

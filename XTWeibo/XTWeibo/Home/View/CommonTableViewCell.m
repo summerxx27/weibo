@@ -10,6 +10,49 @@
 #import "XTWBStatusHelper.h"
 #define SPACE 10
 @implementation CommonTableViewCell
+#pragma mark - 初始化
+- (UIImageView *)headerImageView
+{
+    if (!_headerImageView) {
+        _headerImageView = [[UIImageView alloc] init];
+    }
+    return _headerImageView;
+}
+- (UILabel *)labelName
+{
+    if (!_labelName) {
+        _labelName = [[UILabel alloc] init];
+    }
+    return _labelName;
+}
+- (UILabel *)labelTime
+{
+    if (!_labelTime) {
+        _labelTime = [[UILabel alloc] init];
+    }
+    return _labelTime;
+}
+- (UILabel *)labelText
+{
+    if (!_labelText) {
+        _labelText = [TTTAttributedLabel new];
+    }
+    return _labelText;
+}
+- (SDPhotoGroup *)photosGroup
+{
+    if (!_photosGroup) {
+        _photosGroup = [[SDPhotoGroup alloc] init];
+    }
+    return _photosGroup;
+}
+- (UIButton *)btnShare
+{
+    if (!_btnShare) {
+        _btnShare = [UIButton buttonWithType:UIButtonTypeCustom];
+    }
+    return _btnShare;
+}
 
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
@@ -21,7 +64,7 @@
         [self.contentView addSubview:self.labelText];
         [self.contentView addSubview:self.photosGroup];
         [self.contentView addSubview:self.btnShare];
-        
+        _photosGroup.backgroundColor = [UIColor grayColor];
         // Masonry布局
         // 头像
         [_headerImageView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -77,61 +120,19 @@
         [_btnShare mas_makeConstraints:^(MASConstraintMaker *make) {
             //
             make.top.equalTo(self.photosGroup.mas_bottom).with.offset(SPACE);
-            make.left.right.mas_equalTo(self.photosGroup);
+            make.left.right.mas_equalTo(self.labelText);
             make.height.mas_equalTo(@33);
         }];
         _btnShare.backgroundColor = [UIColor lightGrayColor];
-        [_btnShare setTitle:@"SHARE" forState:UIControlStateNormal];
+        [_btnShare setTitle:@"一键分享" forState:UIControlStateNormal];
+        [_btnShare addTarget:self action:@selector(shareClick:) forControlEvents:UIControlEventTouchUpInside];
+        
     }
     return self;
-}
-#pragma mark - 初始化
-- (UIImageView *)headerImageView
-{
-    if (!_headerImageView) {
-        _headerImageView = [[UIImageView alloc] init];
-    }
-    return _headerImageView;
-}
-- (UILabel *)labelName
-{
-    if (!_labelName) {
-        _labelName = [[UILabel alloc] init];
-    }
-    return _labelName;
-}
-- (UILabel *)labelTime
-{
-    if (!_labelTime) {
-        _labelTime = [[UILabel alloc] init];
-    }
-    return _labelTime;
-}
-- (UILabel *)labelText
-{
-    if (!_labelText) {
-        _labelText = [TTTAttributedLabel new];
-    }
-    return _labelText;
-}
-- (SDPhotoGroup *)photosGroup
-{
-    if (!_photosGroup) {
-        _photosGroup = [[SDPhotoGroup alloc] init];
-    }
-    return _photosGroup;
-}
-- (UIButton *)btnShare
-{
-    if (!_btnShare) {
-        _btnShare = [UIButton buttonWithType:UIButtonTypeCustom];
-    }
-    return _btnShare;
 }
 #pragma mark - 赋值
 - (void)configCellWithModel:(CommonModel *)model user:(User *)userModel
 {
-    
     // 头像
     [_headerImageView sd_setImageWithURL:[NSURL URLWithString:userModel.profile_image_url] placeholderImage:nil];
     _labelName.text = userModel.name;
@@ -154,25 +155,42 @@
     // 计算Photo的height
     CGFloat pg_Height = 0.0;
     if (model.pic_urls.count > 1 && model.pic_urls.count <= 3) {
-        pg_Height = (SCREEN_W - 73) / 3 + 5;
+        pg_Height = (SCREEN_W - 73) / 3;
+        [self updateConstraintsPhotoView:pg_Height];
     }else if(model.pic_urls.count > 3 && model.pic_urls.count <= 6)
     {
-        pg_Height = (SCREEN_W - 73) / 3 * 2 + 10;
+        pg_Height = (SCREEN_W - 73) / 3 * 2 + 5;
+        [self updateConstraintsPhotoView:pg_Height];
     }else if (model.pic_urls.count > 6 && model.pic_urls.count <= 9)
     {
-        pg_Height = (SCREEN_W - 73) + 15;
+        pg_Height = (SCREEN_W - 73) + 10;
+        [self updateConstraintsPhotoView:pg_Height];
     }else if (model.pic_urls.count == 1)
     {
         // 单张图片 为 4/7
-        pg_Height = (SCREEN_W - 63) * 4 / 7 + 5;
+        pg_Height = (SCREEN_W - 63) * 4 / 7;
+        [self updateConstraintsPhotoView:pg_Height];
     }
     else
     {
-        pg_Height = 0.0;
+        [_photosGroup mas_remakeConstraints:^(MASConstraintMaker *make) {
+            //
+            make.top.equalTo(self.labelText.mas_bottom).with.offset(SPACE);
+        }];
+        [_photosGroup mas_makeConstraints:^(MASConstraintMaker *make) {
+            //
+            make.top.equalTo(self.labelText.mas_bottom).with.offset(0);
+            make.height.mas_equalTo(@0.0);
+        }];
     }
+}
+- (void)updateConstraintsPhotoView:(CGFloat)pv_height
+{
     // 更新约束
     [_photosGroup mas_updateConstraints:^(MASConstraintMaker *make) {
-        make.height.mas_equalTo(pg_Height);
+        make.top.equalTo(self.labelText.mas_bottom).with.offset(SPACE);
+        make.left.right.mas_equalTo(self.labelText);
+        make.height.mas_equalTo(pv_height);
     }];
 }
 /// 点击链接的方法
@@ -211,7 +229,11 @@ didLongPressLinkWithTextCheckingResult:(NSTextCheckingResult *)result
     XTNSLog(@"被长按的话题 === %@", NSStringFromRange(result.range))
 }
 
-
+- (void)shareClick:(UIButton *)sender
+{
+    XTNSLog(@"summerxx ---- click")
+    self.shareBlock();
+}
 -(void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
 
