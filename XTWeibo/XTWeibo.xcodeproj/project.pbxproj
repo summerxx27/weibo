@@ -438,7 +438,6 @@
 				TargetAttributes = {
 					BC8394CF1D87BF3D007130A9 = {
 						CreatedOnToolsVersion = 7.3;
-						DevelopmentTeam = S783ZLB9W4;
 					};
 					BC8394E81D87BF3D007130A9 = {
 						CreatedOnToolsVersion = 7.3;
@@ -718,7 +717,7 @@
 			baseConfigurationReference = 1CF959AE7C241F6E3C6721F3 /* Pods-XTWeibo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = S783ZLB9W4;
+				DEVELOPMENT_TEAM = "";
 				GCC_PREFIX_HEADER = "$(SRCROOT)/XTWeibo/XTWeiboPrefixHeader.pch";
 				INFOPLIST_FILE = XTWeibo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -737,7 +736,7 @@
 			baseConfigurationReference = 1237CEF09411E85B15A98D69 /* Pods-XTWeibo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = S783ZLB9W4;
+				DEVELOPMENT_TEAM = "";
 				GCC_PREFIX_HEADER = "$(SRCROOT)/XTWeibo/XTWeiboPrefixHeader.pch";
 				INFOPLIST_FILE = XTWeibo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
