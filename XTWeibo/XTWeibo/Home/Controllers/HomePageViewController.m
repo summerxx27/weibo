@@ -72,10 +72,10 @@
 #warning 模拟器
 //    NSString *accessToken = [[NSUserDefaults standardUserDefaults] objectForKey:ACCESS_TOKEN];
     NSString *url = [NSString stringWithFormat:WEIBO_STATUSES_FRIENDS, @"2.00yOHsNEegFVBEa4756136060YytgK", (long)self.page];
-#warning 真机
+#warning 真机可采用微博登陆的方式
 //    NSString *accessToken = [[NSUserDefaults standardUserDefaults] objectForKey:ACCESS_TOKEN];
 //    NSString *url = [NSString stringWithFormat:WEIBO_STATUSES_FRIENDS, accessToken, (long)self.page];
-//    XTNSLog(@"%@", url);
+    XTNSLog(@"%@", url);
     [XTNetwork XTNetworkRequestWithURL:url parameter:nil methods:GET successResult:^(id result) {
         if ([result isKindOfClass:[NSDictionary class]]) {
             NSMutableArray *statisesArray = [result objectForKey:@"statuses"];
@@ -154,7 +154,6 @@
             NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:large_pic]];
             UIImage *imagerang = [UIImage imageWithData:data];
             [items addObject:imagerang];
-//            XTNSLog(@"%@", large_pic);
         }
         }
         UIActivityViewController *activity = [[UIActivityViewController alloc] initWithActivityItems:items applicationActivities:nil];
@@ -164,16 +163,13 @@
                 UIAlertView *a = [[UIAlertView alloc] initWithTitle:@"提示" message:@"分享成功" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
                 [a show];
             }
-            // com.tencent.xin.sharetimeline
-//            XTNSLog(@"%@", activityType);
-            // null
-//            XTNSLog(@"%@", returnedItems);
         };
         [self presentViewController:activity animated:YES completion:NULL];
     };
     __weak typeof(self) weakSelf = self;
     __weak typeof(CommonTableViewCell *) weakCell = cell;
     cell.loveBlock = ^(NSIndexPath *index){
+        // code
     };
     return cell;
 }

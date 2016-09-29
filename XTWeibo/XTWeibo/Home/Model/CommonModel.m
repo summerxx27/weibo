@@ -14,7 +14,6 @@
     self = [super init];
     if (self) {
         _pic_urls = [NSArray array];
-        _loveArray = [NSMutableArray array];
     }
     return self;
 }

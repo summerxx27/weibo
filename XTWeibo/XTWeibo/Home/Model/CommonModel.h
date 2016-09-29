@@ -13,11 +13,6 @@
 @property (nonatomic, copy) NSString *id;                   // 微博id
 @property (nonatomic, copy) NSString *text;                 // 文本
 @property (nonatomic, copy) NSArray *pic_urls;              // 图片url
-
-@property (nonatomic, strong) NSMutableArray *loveArray;
-
-@property (nonatomic, assign) BOOL shouldUpdateCache;
-
 @end
 
 

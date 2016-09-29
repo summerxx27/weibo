@@ -193,7 +193,7 @@
     }else if (model.pic_urls.count == 1)
     {
         // 单张图片 为 4/7
-        pg_Height = (SCREEN_W - 63) * 4 / 7;
+        pg_Height = (SCREEN_W - 73) / 3;
         [self updateConstraintsPhotoView:pg_Height];
     }
     else

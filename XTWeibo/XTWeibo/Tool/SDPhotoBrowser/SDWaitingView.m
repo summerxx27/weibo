@@ -24,7 +24,7 @@
     self = [super initWithFrame:frame];
     if (self) {
         self.backgroundColor = SDWaitingViewBackgroundColor;
-        self.layer.cornerRadius = 5;
+        self.layer.cornerRadius = 3;
         self.clipsToBounds = YES;
         self.mode = SDWaitingViewModeLoopDiagram;
     }

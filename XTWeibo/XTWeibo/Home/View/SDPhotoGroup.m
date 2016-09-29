@@ -33,12 +33,25 @@
 {
     _photoItemArray = photoItemArray;
     [self.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
-    
+    __block int width = 0;
+    __block int height = 0;
     [photoItemArray enumerateObjectsUsingBlock:^(SDPhotoItem *obj, NSUInteger idx, BOOL *stop) {
         UIButton *btn = [[UIButton alloc] init];
-//        btn.backgroundColor = [UIColor colorWithRed:0.3026 green:0.8168 blue:1.0 alpha:1.0];
-        // thumbnail_pic replace large
-        //
+        NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:obj.thumbnail_pic]];
+        UIImage *image = [UIImage imageWithData:data];
+        NSLog(@"w = %f,h = %f",image.size.width,image.size.height);
+         width = image.size.width;
+        height = image.size.height;
+        // 高 < 宽 宽图把左右两边裁掉
+        CGFloat scale = (height / width);
+        if (scale < 0.99 || isnan(scale)) {
+            btn.imageView.contentMode = UIViewContentModeScaleAspectFill;
+            btn.imageView.layer.contentsRect = CGRectMake(0, 0, 1, 1);
+        } else { // 高图只保留顶部
+            btn.imageView.contentMode = UIViewContentModeScaleToFill;
+            btn.imageView.layer.contentsRect = CGRectMake(0, 0, 1, (float)width / height);
+        }
+        
         NSString *large_pic = [obj.thumbnail_pic stringByReplacingCharactersInRange:NSMakeRange(22, 9) withString:@"large"];
         [btn sd_setImageWithURL:[NSURL URLWithString:large_pic] forState:UIControlStateNormal];
         btn.tag = idx;
@@ -50,7 +63,10 @@
     CGFloat perRowImageCountF = (CGFloat)perRowImageCount;
     int totalRowCount = ceil(imageCount / perRowImageCountF);
     CGFloat h = (SCREEN_W - 73) / 3;
-    self.frame = CGRectMake(0, 0, SCREEN_W - 63, totalRowCount * (SDPhotoGroupImageMargin + h));
+    if (imageCount == 1) {
+        self.frame = CGRectMake(0, 0, width, height);
+    }else{
+        self.frame = CGRectMake(0, 0, SCREEN_W - 63, totalRowCount * (SDPhotoGroupImageMargin + h));}
 }
 
 - (void)layoutSubviews
@@ -67,10 +83,7 @@
         int columnIndex = idx % perRowImageCount;
         CGFloat x = columnIndex * (w + SDPhotoGroupImageMargin);
         CGFloat y = rowIndex * (h + SDPhotoGroupImageMargin);
-        if (imageCount == 1) {
-            btn.frame = CGRectMake(x, y, (SCREEN_W - 63), (SCREEN_W - 63) / 7 * 4);
-        }else{ btn.frame = CGRectMake(x, y, w, h);}
-        
+        btn.frame = CGRectMake(x, y, w, h);
     }];
 }
 
