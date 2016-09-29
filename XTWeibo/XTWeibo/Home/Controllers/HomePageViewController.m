@@ -71,11 +71,11 @@
 {
 #warning 模拟器
 //    NSString *accessToken = [[NSUserDefaults standardUserDefaults] objectForKey:ACCESS_TOKEN];
-//    NSString *url = [NSString stringWithFormat:WEIBO_STATUSES_FRIENDS, @"2.00yOHsNEegFVBEa4756136060YytgK", (long)self.page];
+    NSString *url = [NSString stringWithFormat:WEIBO_STATUSES_FRIENDS, @"2.00yOHsNEegFVBEa4756136060YytgK", (long)self.page];
 #warning 真机
-    NSString *accessToken = [[NSUserDefaults standardUserDefaults] objectForKey:ACCESS_TOKEN];
-    NSString *url = [NSString stringWithFormat:WEIBO_STATUSES_FRIENDS, accessToken, (long)self.page];
-    XTNSLog(@"%@", url);
+//    NSString *accessToken = [[NSUserDefaults standardUserDefaults] objectForKey:ACCESS_TOKEN];
+//    NSString *url = [NSString stringWithFormat:WEIBO_STATUSES_FRIENDS, accessToken, (long)self.page];
+//    XTNSLog(@"%@", url);
     [XTNetwork XTNetworkRequestWithURL:url parameter:nil methods:GET successResult:^(id result) {
         if ([result isKindOfClass:[NSDictionary class]]) {
             NSMutableArray *statisesArray = [result objectForKey:@"statuses"];
@@ -124,7 +124,7 @@
     CommonTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellID];
     CommonModel *model = self.dataArray[indexPath.row];
     User *user = self.userArray[indexPath.row];
-    [cell configCellWithModel:model user:user];
+    [cell configCellWithModel:model user:user indexPath:indexPath];
     
     NSMutableArray *temp = [NSMutableArray array];
     NSMutableArray *urlString = [NSMutableArray array];
@@ -154,7 +154,7 @@
             NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:large_pic]];
             UIImage *imagerang = [UIImage imageWithData:data];
             [items addObject:imagerang];
-            XTNSLog(@"%@", large_pic);
+//            XTNSLog(@"%@", large_pic);
         }
         }
         UIActivityViewController *activity = [[UIActivityViewController alloc] initWithActivityItems:items applicationActivities:nil];
@@ -165,11 +165,15 @@
                 [a show];
             }
             // com.tencent.xin.sharetimeline
-            XTNSLog(@"%@", activityType);
+//            XTNSLog(@"%@", activityType);
             // null
-            XTNSLog(@"%@", returnedItems);
+//            XTNSLog(@"%@", returnedItems);
         };
         [self presentViewController:activity animated:YES completion:NULL];
+    };
+    __weak typeof(self) weakSelf = self;
+    __weak typeof(CommonTableViewCell *) weakCell = cell;
+    cell.loveBlock = ^(NSIndexPath *index){
     };
     return cell;
 }
@@ -181,12 +185,13 @@
     CGFloat cellHeight = [CommonTableViewCell hyb_heightForTableView:tableView config:^(UITableViewCell *sourceCell) {
         //
         CommonTableViewCell *cell = (CommonTableViewCell *)sourceCell;
-        [cell configCellWithModel:model user:user];
+        [cell configCellWithModel:model user:user indexPath:indexPath];
     } cache:^NSDictionary *{
-        return @{kHYBCacheUniqueKey: [NSString stringWithFormat:@"%@", model.id],
+        NSDictionary *cache = @{kHYBCacheUniqueKey: [NSString stringWithFormat:@"%@", model.id],
                  kHYBCacheStateKey : @"",
-                 kHYBRecalculateForStateKey : @(NO) // 标识不用重新更新
+                 kHYBRecalculateForStateKey : @(NO) //
                  };
+        return cache;
     }];
     return cellHeight;
 }

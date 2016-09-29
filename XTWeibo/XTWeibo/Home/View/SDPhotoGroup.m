@@ -40,7 +40,6 @@
         // thumbnail_pic replace large
         //
         NSString *large_pic = [obj.thumbnail_pic stringByReplacingCharactersInRange:NSMakeRange(22, 9) withString:@"large"];
-        NSLog(@"%@", large_pic);
         [btn sd_setImageWithURL:[NSURL URLWithString:large_pic] forState:UIControlStateNormal];
         btn.tag = idx;
         [btn addTarget:self action:@selector(click:) forControlEvents:UIControlEventTouchUpInside];

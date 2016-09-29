@@ -13,7 +13,7 @@
 #import "SDPhotoGroup.h"
 
 typedef void(^shareBlock)();
-
+typedef void(^loveBlock)(NSIndexPath *index);
 @interface CommonTableViewCell : UITableViewCell<TTTAttributedLabelDelegate>
 @property (nonatomic, strong) SDPhotoGroup *photosGroup;
 //@property (nonatomic, strong) CommonModel *dataModel;
@@ -23,7 +23,12 @@ typedef void(^shareBlock)();
 @property (nonatomic, strong) UILabel *labelTime;                       // 时间
 @property (nonatomic, strong) TTTAttributedLabel *labelText;            // 文本
 @property (nonatomic, strong) UIButton *btnShare;                       // 分享按钮
+@property (nonatomic, strong) UIButton *btnComment;                     // 评论
+@property (nonatomic, strong) UIButton *btnLove;                        // 点赞
+@property (nonatomic, strong) TTTAttributedLabel *LabelLoveText;        // 点赞容器
 @property (nonatomic, copy) shareBlock shareBlock;                      // 分享Block
-- (void)configCellWithModel:(CommonModel *)model user:(User *)userModel;
-
+@property (nonatomic, copy) loveBlock loveBlock;                        // 点赞Block
+- (void)configCellWithModel:(CommonModel *)model user:(User *)userModel indexPath:(NSIndexPath *)indexPath;
+@property (nonatomic, strong) NSIndexPath *indexPath;                   // 记录cell的IndexPath
+@property (nonatomic, assign) BOOL isExpand;
 @end

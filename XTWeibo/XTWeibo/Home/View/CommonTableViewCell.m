@@ -9,6 +9,7 @@
 #import "CommonTableViewCell.h"
 #import "XTWBStatusHelper.h"
 #define SPACE 10
+
 @implementation CommonTableViewCell
 #pragma mark - 初始化
 - (UIImageView *)headerImageView
@@ -53,7 +54,20 @@
     }
     return _btnShare;
 }
-
+- (UIButton *)btnLove
+{
+    if (!_btnLove) {
+        _btnLove = [UIButton buttonWithType:UIButtonTypeCustom];
+    }
+    return _btnLove;
+}
+- (TTTAttributedLabel *)LabelLoveText
+{
+    if (!_LabelLoveText) {
+        _LabelLoveText = [TTTAttributedLabel new];
+    }
+    return _LabelLoveText;
+}
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
@@ -64,6 +78,8 @@
         [self.contentView addSubview:self.labelText];
         [self.contentView addSubview:self.photosGroup];
         [self.contentView addSubview:self.btnShare];
+        [self.contentView addSubview:self.btnLove];
+        [self.contentView addSubview:self.LabelLoveText];
         _photosGroup.backgroundColor = [UIColor grayColor];
         // Masonry布局
         // 头像
@@ -120,19 +136,30 @@
         [_btnShare mas_makeConstraints:^(MASConstraintMaker *make) {
             //
             make.top.equalTo(self.photosGroup.mas_bottom).with.offset(SPACE);
-            make.left.right.mas_equalTo(self.labelText);
-            make.height.mas_equalTo(@33);
+            make.left.mas_equalTo(self.labelText);
+            make.width.mas_equalTo((SCREEN_W - 73) / 2);
+            make.height.mas_equalTo(@22);
         }];
         _btnShare.backgroundColor = [UIColor lightGrayColor];
         [_btnShare setTitle:@"一键分享" forState:UIControlStateNormal];
         [_btnShare addTarget:self action:@selector(shareClick:) forControlEvents:UIControlEventTouchUpInside];
-        
+        //
+        [_btnLove mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.top.equalTo(self.photosGroup.mas_bottom).with.offset(SPACE);
+            make.left.equalTo(self.btnShare.mas_right).with.offset(SPACE);
+            make.width.height.mas_equalTo(self.btnShare);
+        }];
+        _btnLove.backgroundColor = [UIColor lightGrayColor];
+        [_btnLove setTitle:@"点赞" forState:UIControlStateNormal];
+        [_btnLove addTarget:self action:@selector(loveClick:) forControlEvents:UIControlEventTouchUpInside];
+        self.hyb_lastViewInCell = _btnLove;
     }
     return self;
 }
 #pragma mark - 赋值
-- (void)configCellWithModel:(CommonModel *)model user:(User *)userModel
+- (void)configCellWithModel:(CommonModel *)model user:(User *)userModel indexPath:(NSIndexPath *)indexPath
 {
+    self.indexPath = indexPath;
     // 头像
     [_headerImageView sd_setImageWithURL:[NSURL URLWithString:userModel.profile_image_url] placeholderImage:nil];
     _labelName.text = userModel.name;
@@ -143,13 +170,11 @@
     NSArray *results = [[XTWBStatusHelper regexTopic] matchesInString:model.text options:0 range:NSMakeRange(0, model.text.length)];
     for (NSTextCheckingResult *result in results) {
         // 话题范围
-        NSLog(@"range === %@", NSStringFromRange(result.range));
         [_labelText addLinkWithTextCheckingResult:result];
     }
     // 表情检测
     NSArray *results1 = [[XTWBStatusHelper regexEmoticon] matchesInString:model.text options:0 range:NSMakeRange(0, model.text.length)];
     for (NSTextCheckingResult *result in results1) {
-        NSLog(@"range === %@", NSStringFromRange(result.range));
         [_labelText addLinkWithTextCheckingResult:result];
     }
     // 计算Photo的height
@@ -173,11 +198,8 @@
     }
     else
     {
+        // 当没有图片的时候 重新布局~
         [_photosGroup mas_remakeConstraints:^(MASConstraintMaker *make) {
-            //
-            make.top.equalTo(self.labelText.mas_bottom).with.offset(SPACE);
-        }];
-        [_photosGroup mas_makeConstraints:^(MASConstraintMaker *make) {
             //
             make.top.equalTo(self.labelText.mas_bottom).with.offset(0);
             make.height.mas_equalTo(@0.0);
@@ -197,7 +219,7 @@
 - (void)attributedLabel:(TTTAttributedLabel *)label
    didSelectLinkWithURL:(NSURL *)url
 {
-    XTNSLog(@"被点击的url === %@", url);
+//    XTNSLog(@"被点击的url === %@", url);
 }
 
 /// 点击长按数据
@@ -211,7 +233,7 @@
 - (void)attributedLabel:(TTTAttributedLabel *)label
 didSelectLinkWithTextCheckingResult:(NSTextCheckingResult *)result
 {
-    XTNSLog(@"被点击的话题 === %@", NSStringFromRange(result.range))
+//    XTNSLog(@"被点击的话题 === %@", NSStringFromRange(result.range))
 
 }
 /// 长按链接的方法
@@ -219,20 +241,25 @@ didSelectLinkWithTextCheckingResult:(NSTextCheckingResult *)result
 didLongPressLinkWithURL:(NSURL *)url
                 atPoint:(CGPoint)point
 {
-    XTNSLog(@"被长按的url === %@", url)
+//    XTNSLog(@"被长按的url === %@", url)
 }
 /// 可以长按的文本
 - (void)attributedLabel:(TTTAttributedLabel *)label
 didLongPressLinkWithTextCheckingResult:(NSTextCheckingResult *)result
                 atPoint:(CGPoint)point
 {
-    XTNSLog(@"被长按的话题 === %@", NSStringFromRange(result.range))
+//    XTNSLog(@"被长按的话题 === %@", NSStringFromRange(result.range))
 }
-
+#pragma mark - Share
 - (void)shareClick:(UIButton *)sender
 {
-    XTNSLog(@"summerxx ---- click")
+//    XTNSLog(@"summerxx ---- click")
     self.shareBlock();
+}
+#pragma mark - Love
+- (void)loveClick:(UIButton *)sender
+{
+    self.loveBlock(_indexPath);
 }
 -(void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
