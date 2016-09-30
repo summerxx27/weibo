@@ -37,12 +37,11 @@
     __block int height = 0;
     [photoItemArray enumerateObjectsUsingBlock:^(SDPhotoItem *obj, NSUInteger idx, BOOL *stop) {
         _btnImage = [[UIButton alloc] init];
-        // 计算优化
+        // 计算
         dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0);
         dispatch_async(queue, ^{
             NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:obj.thumbnail_pic]];
             UIImage *image = [UIImage imageWithData:data];
-            NSLog(@"w = %f,h = %f",image.size.width,image.size.height);
             width = image.size.width;
             height = image.size.height;
             // 高 < 宽 宽图把左右两边裁掉

@@ -58,7 +58,15 @@
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    [[SDWebImageDownloader sharedDownloader] setShouldDecompressImages:NO];
+    [[SDImageCache sharedImageCache] setShouldDecompressImages:NO];
+    [[SDImageCache sharedImageCache] setShouldCacheImagesInMemory:NO];
+    
+    // 设置内存最大 1M
+    // The maximum length of time to keep an image in the cache, in seconds
+    [[SDImageCache sharedImageCache] setMaxMemoryCost:1024 * 1024 * 1];
+    [[SDImageCache sharedImageCache] setMaxCacheAge:3600 * 24 * 7];
+    
     self.view.backgroundColor = [UIColor whiteColor];
     // 注册 在登陆成功回调之后再进行网络请求
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reqNetwork) name:REQ_NETWORK object:nil];
@@ -71,7 +79,7 @@
 #warning 真机可采用微博登陆的方式
     NSString *accessToken = [[NSUserDefaults standardUserDefaults] objectForKey:ACCESS_TOKEN];
     NSString *url = [NSString stringWithFormat:WEIBO_STATUSES_FRIENDS, accessToken, (long)self.page];
-    XTNSLog(@"%@", url);
+    
     [XTNetwork XTNetworkRequestWithURL:url parameter:nil methods:GET successResult:^(id result) {
         if ([result isKindOfClass:[NSDictionary class]]) {
             NSMutableArray *statisesArray = [result objectForKey:@"statuses"];
@@ -95,7 +103,7 @@
                 CommonModel *cModel = [CommonModel yy_modelWithDictionary:dic];
                 [self.dataArray addObject:cModel];
             }
-            XTNSLog(@"count === %lu", (unsigned long)self.dataArray.count);
+            NSLog(@"count === %lu", (unsigned long)self.dataArray.count);
         }
         if (self.dataArray.count > 0) {
             [self.tableView reloadData];
@@ -133,7 +141,6 @@
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     // 分享按钮
     cell.shareBlock = ^(){
-        XTNSLog(@"summerxx");
         NSMutableArray *items = [NSMutableArray array];
         if (model.pic_urls.count == 0) {
             // 文字
@@ -218,8 +225,17 @@
     self.type = LoadMoreStyle;
     [self reqNetwork];
 }
-- (void)didReceiveMemoryWarning {
+
+-(void)viewDidDisappear:(BOOL)animated{
+    [super viewDidDisappear:animated];
+    [self clearImageCache];
+}
+-(void)didReceiveMemoryWarning{
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    [self clearImageCache];
+}
+-(void)clearImageCache{
+    SDImageCache *imageCache = [SDImageCache sharedImageCache];
+    [imageCache clearMemory];
 }
 @end
