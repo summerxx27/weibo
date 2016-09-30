@@ -95,6 +95,7 @@
                 CommonModel *cModel = [CommonModel yy_modelWithDictionary:dic];
                 [self.dataArray addObject:cModel];
             }
+            XTNSLog(@"count === %lu", (unsigned long)self.dataArray.count);
         }
         if (self.dataArray.count > 0) {
             [self.tableView reloadData];
@@ -118,7 +119,6 @@
     CommonTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellID];
     CommonModel *model = self.dataArray[indexPath.row];
     [cell configCellWithModel:model user:model.user indexPath:indexPath];
-    
     NSMutableArray *temp = [NSMutableArray array];
     NSMutableArray *urlString = [NSMutableArray array];
     for (NSDictionary *dic in model.pic_urls) {

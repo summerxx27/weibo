@@ -39,7 +39,7 @@
 #define XTNSLog(...) printf("%f %s\n",[[NSDate date]timeIntervalSince1970],[[NSString stringWithFormat:__VA_ARGS__]UTF8String]);
 #endif
 #define WEIBO_STATUSES_PUBLIC @"https://api.weibo.com/2/statuses/public_timeline.json?access_token=%@&count=50&base_app=0&page=1" /* 公共微博接口 */
-#define WEIBO_STATUSES_FRIENDS @"https://api.weibo.com/2/statuses/friends_timeline.json?access_token=%@&since_id=0&max_id=0&count=10&base_app=0&feature=0&trim_user=0&page=%ld" /* 你关注的人微博 */
+#define WEIBO_STATUSES_FRIENDS @"https://api.weibo.com/2/statuses/friends_timeline.json?access_token=%@&since_id=0&max_id=0&count=150&base_app=0&feature=0&trim_user=0&page=%ld" /* 你关注的人微博 */
 
 
 #endif /* XTWeiboPrefixHeader_pch */

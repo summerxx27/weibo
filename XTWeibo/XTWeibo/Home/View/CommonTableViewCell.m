@@ -255,7 +255,7 @@ didLongPressLinkWithTextCheckingResult:(NSTextCheckingResult *)result
 #pragma mark - Love
 - (void)loveClick:(UIButton *)sender
 {
-    self.loveBlock(_indexPath);
+//    self.loveBlock(_indexPath);
 }
 -(void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
