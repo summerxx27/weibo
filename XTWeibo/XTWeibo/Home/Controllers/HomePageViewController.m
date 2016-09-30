@@ -209,6 +209,7 @@
 - (void)loadNewData
 {
     _page = 1;
+    self.type = NewDataStyle;
     [self reqNetwork];
 }
 - (void)loadMoreData
