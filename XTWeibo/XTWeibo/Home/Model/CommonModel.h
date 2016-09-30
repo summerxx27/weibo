@@ -7,12 +7,18 @@
 //
 
 #import <Foundation/Foundation.h>
+@interface User : NSObject
+@property (nonatomic, copy) NSString *name;                 // 用户名称
+@property (nonatomic, copy) NSString *description;          // 用户描述
+@property (nonatomic, copy) NSString *profile_image_url;    // 头像url
+@property (nonatomic, copy) NSString *city;                 // city
+@end
 
 @interface CommonModel : NSObject
 @property (nonatomic, copy) NSString *created_at;           // 微博创建时间
 @property (nonatomic, copy) NSString *id;                   // 微博id
 @property (nonatomic, copy) NSString *text;                 // 文本
 @property (nonatomic, copy) NSArray *pic_urls;              // 图片url
+@property (nonatomic, strong) User *user;
 @end
-
 

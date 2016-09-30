@@ -8,7 +8,6 @@
 
 #import <UIKit/UIKit.h>
 #import "CommonModel.h"
-#import "User.h"
 // 图片浏览
 #import "SDPhotoGroup.h"
 

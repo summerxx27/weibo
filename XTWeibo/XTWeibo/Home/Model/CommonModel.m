@@ -18,3 +18,7 @@
     return self;
 }
 @end
+
+@implementation User
+
+@end

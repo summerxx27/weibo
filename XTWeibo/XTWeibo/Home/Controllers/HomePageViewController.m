@@ -10,7 +10,6 @@
 #import "XTNetwork.h"
 #import "CommonTableViewCell.h"
 #import "CommonModel.h"
-#import "User.h"
 #import "SDPhotoItem.h"
 #define cellID @"cellID"
 @interface HomePageViewController ()<UITableViewDelegate, UITableViewDataSource>
@@ -94,9 +93,7 @@
             }
             for (NSDictionary *dic in statisesArray) {
                 CommonModel *cModel = [CommonModel yy_modelWithDictionary:dic];
-                User *user = [User yy_modelWithDictionary:[dic objectForKey:@"user"]];
                 [self.dataArray addObject:cModel];
-                [self.userArray addObject:user];
             }
         }
         if (self.dataArray.count > 0) {
@@ -120,8 +117,7 @@
 {
     CommonTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellID];
     CommonModel *model = self.dataArray[indexPath.row];
-    User *user = self.userArray[indexPath.row];
-    [cell configCellWithModel:model user:user indexPath:indexPath];
+    [cell configCellWithModel:model user:model.user indexPath:indexPath];
     
     NSMutableArray *temp = [NSMutableArray array];
     NSMutableArray *urlString = [NSMutableArray array];
@@ -171,11 +167,9 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     CommonModel *model = self.dataArray[indexPath.row];
-    User *user = self.userArray[indexPath.row];
     CGFloat cellHeight = [CommonTableViewCell hyb_heightForTableView:tableView config:^(UITableViewCell *sourceCell) {
-        //
         CommonTableViewCell *cell = (CommonTableViewCell *)sourceCell;
-        [cell configCellWithModel:model user:user indexPath:indexPath];
+        [cell configCellWithModel:model user:model.user indexPath:indexPath];
     } cache:^NSDictionary *{
         NSDictionary *cache = @{kHYBCacheUniqueKey: [NSString stringWithFormat:@"%@", model.id],
                  kHYBCacheStateKey : @"",
