@@ -46,9 +46,7 @@
     // accessToken 为空, 证明没有登陆过
     if ([[NSUserDefaults standardUserDefaults] objectForKey:ACCESS_TOKEN] == nil) {
         // 根视图为登陆VC
-//        self.window.rootViewController = [LoginViewController new];
-        // 模拟器测试时, 请打开注释
-        self.window.rootViewController = _tabVC;
+        self.window.rootViewController = [LoginViewController new];
     }else{
         self.window.rootViewController = _tabVC;
     }

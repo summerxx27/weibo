@@ -18,6 +18,4 @@
 - (void)showHint:(NSString *)hint yOffset:(float)yOffset;
 
 - (void)showDetailHint:(NSString *)hint yOffset:(float)yOffset;
-
-- (void)summerxx_RereshHeader:(UITableView *)tableView;
 @end

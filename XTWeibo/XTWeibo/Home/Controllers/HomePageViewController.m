@@ -69,12 +69,9 @@
 }
 - (void)reqNetwork
 {
-#warning 模拟器
-//    NSString *accessToken = [[NSUserDefaults standardUserDefaults] objectForKey:ACCESS_TOKEN];
-    NSString *url = [NSString stringWithFormat:WEIBO_STATUSES_FRIENDS, @"2.00yOHsNEegFVBEa4756136060YytgK", (long)self.page];
 #warning 真机可采用微博登陆的方式
-//    NSString *accessToken = [[NSUserDefaults standardUserDefaults] objectForKey:ACCESS_TOKEN];
-//    NSString *url = [NSString stringWithFormat:WEIBO_STATUSES_FRIENDS, accessToken, (long)self.page];
+    NSString *accessToken = [[NSUserDefaults standardUserDefaults] objectForKey:ACCESS_TOKEN];
+    NSString *url = [NSString stringWithFormat:WEIBO_STATUSES_FRIENDS, accessToken, (long)self.page];
     XTNSLog(@"%@", url);
     [XTNetwork XTNetworkRequestWithURL:url parameter:nil methods:GET successResult:^(id result) {
         if ([result isKindOfClass:[NSDictionary class]]) {
@@ -166,11 +163,8 @@
         };
         [self presentViewController:activity animated:YES completion:NULL];
     };
-    __weak typeof(self) weakSelf = self;
-    __weak typeof(CommonTableViewCell *) weakCell = cell;
-    cell.loveBlock = ^(NSIndexPath *index){
-        // code
-    };
+//    __weak typeof(self) weakSelf = self;
+//    __weak typeof(CommonTableViewCell *) weakCell = cell;
     return cell;
 }
 #pragma mark - 返回 Cell的高度
@@ -191,10 +185,7 @@
     }];
     return cellHeight;
 }
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
+#pragma mark - 刷新
 - (void)summerxx_RefreshHeader:(UITableView *)tableView
 {
     // 设置回调（一旦进入刷新状态，就调用target的action，也就是调用self的loadNewData方法）
@@ -221,7 +212,6 @@
     // 设置footer
     tableView.mj_footer = footer;
 }
-
 - (void)loadNewData
 {
     _page = 1;
@@ -232,5 +222,9 @@
     _page ++;
     self.type = LoadMoreStyle;
     [self reqNetwork];
+}
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
 }
 @end

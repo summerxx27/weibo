@@ -37,20 +37,20 @@
     __block int height = 0;
     [photoItemArray enumerateObjectsUsingBlock:^(SDPhotoItem *obj, NSUInteger idx, BOOL *stop) {
         UIButton *btn = [[UIButton alloc] init];
-        NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:obj.thumbnail_pic]];
-        UIImage *image = [UIImage imageWithData:data];
-        NSLog(@"w = %f,h = %f",image.size.width,image.size.height);
-         width = image.size.width;
-        height = image.size.height;
-        // 高 < 宽 宽图把左右两边裁掉
-        CGFloat scale = (height / width);
-        if (scale < 0.99 || isnan(scale)) {
-            btn.imageView.contentMode = UIViewContentModeScaleAspectFill;
-            btn.imageView.layer.contentsRect = CGRectMake(0, 0, 1, 1);
-        } else { // 高图只保留顶部
-            btn.imageView.contentMode = UIViewContentModeScaleToFill;
-            btn.imageView.layer.contentsRect = CGRectMake(0, 0, 1, (float)width / height);
-        }
+//        NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:obj.thumbnail_pic]];
+//        UIImage *image = [UIImage imageWithData:data];
+//        NSLog(@"w = %f,h = %f",image.size.width,image.size.height);
+//         width = image.size.width;
+//        height = image.size.height;
+//        // 高 < 宽 宽图把左右两边裁掉
+//        CGFloat scale = (height / width);
+//        if (scale < 0.99 || isnan(scale)) {
+//            btn.imageView.contentMode = UIViewContentModeScaleAspectFill;
+//            btn.imageView.layer.contentsRect = CGRectMake(0, 0, 1, 1);
+//        } else { // 高图只保留顶部
+//            btn.imageView.contentMode = UIViewContentModeScaleToFill;
+//            btn.imageView.layer.contentsRect = CGRectMake(0, 0, 1, (float)width / height);
+//        }
         
         NSString *large_pic = [obj.thumbnail_pic stringByReplacingCharactersInRange:NSMakeRange(22, 9) withString:@"large"];
         [btn sd_setImageWithURL:[NSURL URLWithString:large_pic] forState:UIControlStateNormal];

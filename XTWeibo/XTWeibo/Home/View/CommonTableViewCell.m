@@ -80,7 +80,6 @@
         [self.contentView addSubview:self.btnShare];
         [self.contentView addSubview:self.btnLove];
         [self.contentView addSubview:self.LabelLoveText];
-        _photosGroup.backgroundColor = [UIColor grayColor];
         // Masonry布局
         // 头像
         [_headerImageView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -101,7 +100,6 @@
             make.left.equalTo(self.headerImageView.mas_right).with.offset(SPACE);
             make.right.equalTo(self.contentView).with.offset(-SPACE);
         }];
-        _labelName.backgroundColor = [UIColor yellowColor];
         _labelName.font = [UIFont fontWithName:@"Avenir-Heavy" size:17];
         // 时间
         _labelTime.preferredMaxLayoutWidth = SCREEN_W - 63;
@@ -112,17 +110,16 @@
         }];
         _labelTime.font = [UIFont fontWithName:@"Avenir-Heavy" size:10];
         _labelTime.textColor = [UIColor lightGrayColor];
-        _labelTime.backgroundColor = [UIColor greenColor];
         // 发布的内容
         // 视图是多宽的 进行相应的设置
         self.labelText.preferredMaxLayoutWidth = SCREEN_W - 63;
         _labelText.delegate = self;
         _labelText.numberOfLines = 0;
+        _labelText.textColor = [UIColor grayColor];
         [_labelText mas_makeConstraints:^(MASConstraintMaker *make) {
             make.top.equalTo(self.labelTime.mas_bottom).with.offset(SPACE);
             make.left.right.mas_equalTo(self.labelTime);
         }];
-        _labelText.backgroundColor = [UIColor lightGrayColor];
         // 自动检测链接
         _labelText.enabledTextCheckingTypes = NSTextCheckingTypeLink;
         // 图片浏览器
@@ -152,7 +149,6 @@
         _btnLove.backgroundColor = [UIColor lightGrayColor];
         [_btnLove setTitle:@"点赞" forState:UIControlStateNormal];
         [_btnLove addTarget:self action:@selector(loveClick:) forControlEvents:UIControlEventTouchUpInside];
-        self.hyb_lastViewInCell = _btnLove;
     }
     return self;
 }

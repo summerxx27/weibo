@@ -35,7 +35,6 @@
 		BCD0F5451D89320A00153623 /* NewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BCD0F5441D89320A00153623 /* NewsViewController.m */; };
 		BCD0F5491D89323100153623 /* MyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BCD0F5481D89323100153623 /* MyViewController.m */; };
 		BCD0F54C1D89385800153623 /* NSString+XTAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = BCD0F54B1D89385800153623 /* NSString+XTAdd.m */; };
-		BCDB7A481D9D045800263A34 /* XTWBPictureMetadata.m in Sources */ = {isa = PBXBuildFile; fileRef = BCDB7A471D9D045700263A34 /* XTWBPictureMetadata.m */; };
 		BCE2A8B51D8E430400104BC5 /* UITableView+HYBCacheHeight.m in Sources */ = {isa = PBXBuildFile; fileRef = BCE2A8B21D8E430400104BC5 /* UITableView+HYBCacheHeight.m */; };
 		BCE2A8B61D8E430400104BC5 /* UITableViewCell+HYBMasonryAutoCellHeight.m in Sources */ = {isa = PBXBuildFile; fileRef = BCE2A8B41D8E430400104BC5 /* UITableViewCell+HYBMasonryAutoCellHeight.m */; };
 		BCE50BD31D928E80001688B8 /* XTWBStatusHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = BCE50BD21D928E80001688B8 /* XTWBStatusHelper.m */; };
@@ -115,8 +114,6 @@
 		BCD0F5481D89323100153623 /* MyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyViewController.m; sourceTree = "<group>"; };
 		BCD0F54A1D89385800153623 /* NSString+XTAdd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+XTAdd.h"; sourceTree = "<group>"; };
 		BCD0F54B1D89385800153623 /* NSString+XTAdd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+XTAdd.m"; sourceTree = "<group>"; };
-		BCDB7A461D9D045700263A34 /* XTWBPictureMetadata.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XTWBPictureMetadata.h; sourceTree = "<group>"; };
-		BCDB7A471D9D045700263A34 /* XTWBPictureMetadata.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XTWBPictureMetadata.m; sourceTree = "<group>"; };
 		BCE2A8B11D8E430400104BC5 /* UITableView+HYBCacheHeight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+HYBCacheHeight.h"; sourceTree = "<group>"; };
 		BCE2A8B21D8E430400104BC5 /* UITableView+HYBCacheHeight.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+HYBCacheHeight.m"; sourceTree = "<group>"; };
 		BCE2A8B31D8E430400104BC5 /* UITableViewCell+HYBMasonryAutoCellHeight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableViewCell+HYBMasonryAutoCellHeight.h"; sourceTree = "<group>"; };
@@ -186,8 +183,6 @@
 				B938A8691D88385700A4F636 /* CommonModel.m */,
 				BCD0F52A1D88F20A00153623 /* User.h */,
 				BCD0F52B1D88F20A00153623 /* User.m */,
-				BCDB7A461D9D045700263A34 /* XTWBPictureMetadata.h */,
-				BCDB7A471D9D045700263A34 /* XTWBPictureMetadata.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -242,7 +237,6 @@
 		BC8394D21D87BF3D007130A9 /* XTWeibo */ = {
 			isa = PBXGroup;
 			children = (
-				BCCE88451D950B3B00C066E6 /* TLIbs */,
 				BCCE88421D94D00900C066E6 /* Resources */,
 				BCD0F5461D89322200153623 /* My */,
 				BCD0F5421D89320400153623 /* News */,
@@ -311,12 +305,12 @@
 		BC8395131D87F1DF007130A9 /* Tool */ = {
 			isa = PBXGroup;
 			children = (
+				B9F287CD1D8EBDE700E90C8D /* SDPhotoBrowser */,
 				BCE2A8B01D8E430400104BC5 /* HYBMasonryAutoCellHeight */,
 				BC8395141D87F2A4007130A9 /* XTNetwork.h */,
 				BC8395151D87F2A4007130A9 /* XTNetwork.m */,
 				BCD0F54A1D89385800153623 /* NSString+XTAdd.h */,
 				BCD0F54B1D89385800153623 /* NSString+XTAdd.m */,
-				B9F287CD1D8EBDE700E90C8D /* SDPhotoBrowser */,
 				BCE50BD11D928E80001688B8 /* XTWBStatusHelper.h */,
 				BCE50BD21D928E80001688B8 /* XTWBStatusHelper.m */,
 				BCCE883C1D94BD0900C066E6 /* UIView+XTAdd.h */,
@@ -335,13 +329,6 @@
 				BCCE88431D94D01A00C066E6 /* EmoticonWeibo.bundle */,
 			);
 			path = Resources;
-			sourceTree = "<group>";
-		};
-		BCCE88451D950B3B00C066E6 /* TLIbs */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = TLIbs;
 			sourceTree = "<group>";
 		};
 		BCD0F5421D89320400153623 /* News */ = {
@@ -443,7 +430,7 @@
 				TargetAttributes = {
 					BC8394CF1D87BF3D007130A9 = {
 						CreatedOnToolsVersion = 7.3;
-						DevelopmentTeam = 637U33J5E6;
+						DevelopmentTeam = 8XEUVFYSL4;
 					};
 					BC8394E81D87BF3D007130A9 = {
 						CreatedOnToolsVersion = 7.3;
@@ -578,7 +565,6 @@
 				BC8395161D87F2A4007130A9 /* XTNetwork.m in Sources */,
 				BC8394D81D87BF3D007130A9 /* AppDelegate.m in Sources */,
 				BCD0F5451D89320A00153623 /* NewsViewController.m in Sources */,
-				BCDB7A481D9D045800263A34 /* XTWBPictureMetadata.m in Sources */,
 				BCE2A8B51D8E430400104BC5 /* UITableView+HYBCacheHeight.m in Sources */,
 				BC8394D51D87BF3D007130A9 /* main.m in Sources */,
 			);
@@ -724,7 +710,7 @@
 			baseConfigurationReference = 1CF959AE7C241F6E3C6721F3 /* Pods-XTWeibo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 637U33J5E6;
+				DEVELOPMENT_TEAM = 8XEUVFYSL4;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/XTWeibo/XTWeiboPrefixHeader.pch";
 				INFOPLIST_FILE = XTWeibo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -743,7 +729,7 @@
 			baseConfigurationReference = 1237CEF09411E85B15A98D69 /* Pods-XTWeibo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 637U33J5E6;
+				DEVELOPMENT_TEAM = 8XEUVFYSL4;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/XTWeibo/XTWeiboPrefixHeader.pch";
 				INFOPLIST_FILE = XTWeibo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
