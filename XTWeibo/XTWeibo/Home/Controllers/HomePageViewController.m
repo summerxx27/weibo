@@ -176,6 +176,7 @@
     CommonModel *model = self.dataArray[indexPath.row];
     CGFloat cellHeight = [CommonTableViewCell hyb_heightForTableView:tableView config:^(UITableViewCell *sourceCell) {
         CommonTableViewCell *cell = (CommonTableViewCell *)sourceCell;
+        // 这里的indexPath 本来要做别的操作的, 你的布局如果没有相关需求, 不需要进行传值~
         [cell configCellWithModel:model user:model.user indexPath:indexPath];
     } cache:^NSDictionary *{
         NSDictionary *cache = @{kHYBCacheUniqueKey: [NSString stringWithFormat:@"%@", model.id],
