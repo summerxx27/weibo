@@ -128,6 +128,8 @@
             make.top.equalTo(self.labelText.mas_bottom).with.offset(SPACE);
             make.left.equalTo(self.labelText);
             make.width.mas_equalTo(SCREEN_W - 63);
+            static int i = 0;
+            NSLog(@"------------- %d", i ++);
         }];
         // 分享按钮
         [_btnShare mas_makeConstraints:^(MASConstraintMaker *make) {

@@ -9,4 +9,5 @@ pod 'XTAlertViewController', '~> 1.0.1'
 pod "WeiboSDK", :git => "https://github.com/sinaweibosdk/weibo_ios_sdk.git"
 pod 'YYModel'
 pod 'TTTAttributedLabel', '~> 2.0.0' 
+pod 'FMDB', '~> 2.6.2'
 end

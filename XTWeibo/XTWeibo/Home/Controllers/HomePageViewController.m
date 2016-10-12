@@ -18,6 +18,7 @@
 @property (nonatomic, strong) NSMutableArray *userArray;
 @property (nonatomic, assign) NSInteger page;
 @property (nonatomic, assign) LoadType type;
+@property (nonatomic, strong) FMDatabase *db;
 @end
 
 @implementation HomePageViewController
@@ -73,6 +74,18 @@
     // tableView Add
     [self.view addSubview:self.tableView];
     [self summerxx_RefreshHeader:self.tableView];
+    
+    // 创建数据表
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentDirectory = [paths objectAtIndex:0];
+    NSString *dbPath = [documentDirectory stringByAppendingPathComponent:@"StaffPosition.db"];
+    _db = [FMDatabase databaseWithPath:dbPath] ;
+    NSLog(@"数据库路径 ======= %@", dbPath);
+    if ([_db open]) {
+        NSLog(@"打开数据库成功");
+    }
+    [_db executeUpdate:@"create table weibo (name text, text text)"];
+    
 }
 - (void)reqNetwork
 {
@@ -102,7 +115,12 @@
             for (NSDictionary *dic in statisesArray) {
                 CommonModel *cModel = [CommonModel yy_modelWithDictionary:dic];
                 [self.dataArray addObject:cModel];
+                
+                
+                [_db executeUpdate:@"insert into weibo (name, text) values (?, ?)"
+                 ,cModel.created_at, cModel.text];
             }
+            [_db commit];
             NSLog(@"count === %lu", (unsigned long)self.dataArray.count);
         }
         if (self.dataArray.count > 0) {

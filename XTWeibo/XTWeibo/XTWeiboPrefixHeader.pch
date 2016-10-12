@@ -34,6 +34,7 @@
 #import <TTTAttributedLabel.h>
 #import "UIView+XTAdd.h"
 #import "UIViewController+XTAdd.h"
+#import <FMDB.h>
 // iOS10 log
 #ifndef __OPTIMIZE__
 #define XTNSLog(...) printf("%f %s\n",[[NSDate date]timeIntervalSince1970],[[NSString stringWithFormat:__VA_ARGS__]UTF8String]);
