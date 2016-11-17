@@ -71,21 +71,9 @@
     self.view.backgroundColor = [UIColor whiteColor];
     // 注册 在登陆成功回调之后再进行网络请求
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reqNetwork) name:REQ_NETWORK object:nil];
-    // tableView Add
+    
     [self.view addSubview:self.tableView];
     [self summerxx_RefreshHeader:self.tableView];
-    
-    // 创建数据表
-    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-    NSString *documentDirectory = [paths objectAtIndex:0];
-    NSString *dbPath = [documentDirectory stringByAppendingPathComponent:@"StaffPosition.db"];
-    _db = [FMDatabase databaseWithPath:dbPath] ;
-    NSLog(@"数据库路径 ======= %@", dbPath);
-    if ([_db open]) {
-        NSLog(@"打开数据库成功");
-    }
-    [_db executeUpdate:@"create table weibo (name text, text text)"];
-    
 }
 - (void)reqNetwork
 {
@@ -97,16 +85,13 @@
         if ([result isKindOfClass:[NSDictionary class]]) {
             NSMutableArray *statisesArray = [result objectForKey:@"statuses"];
             switch (self.type) {
-                case NewDataStyle:
-                {
+                case NewDataStyle: {
                     // 加载新数据清空数组
                     self.dataArray = nil;
                     self.userArray = nil;
                 }
                     break;
-                case LoadMoreStyle:
-                {
-                    
+                case LoadMoreStyle: {
                 }
                     break;
                 default:
@@ -116,14 +101,7 @@
                 CommonModel *cModel = [CommonModel yy_modelWithDictionary:dic];
                 [self.dataArray addObject:cModel];
                 
-                
-                [_db executeUpdate:@"insert into weibo (name, text) values (?, ?)"
-                 ,cModel.created_at, cModel.text];
             }
-            [_db commit];
-            NSLog(@"count === %lu", (unsigned long)self.dataArray.count);
-        }
-        if (self.dataArray.count > 0) {
             [self.tableView reloadData];
             [self.tableView.mj_header endRefreshing];
             [self.tableView.mj_footer endRefreshing];
@@ -132,16 +110,13 @@
         [self showHint:@"请求失败"];
     }];
 }
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     return 1;
 }
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return self.dataArray.count;
 }
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     CommonTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellID];
     CommonModel *model = self.dataArray[indexPath.row];
     [cell configCellWithModel:model user:model.user indexPath:indexPath];
@@ -189,8 +164,7 @@
     return cell;
 }
 #pragma mark - 返回 Cell的高度
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
-{
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     CommonModel *model = self.dataArray[indexPath.row];
     CGFloat cellHeight = [CommonTableViewCell hyb_heightForTableView:tableView config:^(UITableViewCell *sourceCell) {
         CommonTableViewCell *cell = (CommonTableViewCell *)sourceCell;
@@ -206,8 +180,7 @@
     return cellHeight;
 }
 #pragma mark - 刷新
-- (void)summerxx_RefreshHeader:(UITableView *)tableView
-{
+- (void)summerxx_RefreshHeader:(UITableView *)tableView{
     // 设置回调（一旦进入刷新状态，就调用target的action，也就是调用self的loadNewData方法）
     MJRefreshNormalHeader *header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadNewData)];
     // 设置自动切换透明度(在导航栏下面自动隐藏)
@@ -232,14 +205,13 @@
     // 设置footer
     tableView.mj_footer = footer;
 }
-- (void)loadNewData
-{
+- (void)loadNewData{
     _page = 1;
     self.type = NewDataStyle;
     [self reqNetwork];
+    
 }
-- (void)loadMoreData
-{
+- (void)loadMoreData{
     _page ++;
     self.type = LoadMoreStyle;
     [self reqNetwork];
