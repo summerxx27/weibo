@@ -11,4 +11,6 @@
 @interface NSString (XTAdd)
 - (CGFloat)widthWithStringAttribute:(NSDictionary <NSString *, id> *)attribute;
 - (CGFloat)heightWithStringAttribute:(NSDictionary <NSString *, id> *)attribute;
+- (CGSize)sizeWithConstrainedToWidth:(float)width fromFont:(UIFont *)font1 lineSpace:(float)lineSpace;
+
 @end

@@ -37,6 +37,8 @@
 		BCE2A8B51D8E430400104BC5 /* UITableView+HYBCacheHeight.m in Sources */ = {isa = PBXBuildFile; fileRef = BCE2A8B21D8E430400104BC5 /* UITableView+HYBCacheHeight.m */; };
 		BCE2A8B61D8E430400104BC5 /* UITableViewCell+HYBMasonryAutoCellHeight.m in Sources */ = {isa = PBXBuildFile; fileRef = BCE2A8B41D8E430400104BC5 /* UITableViewCell+HYBMasonryAutoCellHeight.m */; };
 		BCE50BD31D928E80001688B8 /* XTWBStatusHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = BCE50BD21D928E80001688B8 /* XTWBStatusHelper.m */; };
+		BCF61ED31E5A96BF003E386D /* WeiboTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BCF61ED21E5A96BF003E386D /* WeiboTableViewCell.m */; };
+		BCF61ED61E5AA2C9003E386D /* Statuses.m in Sources */ = {isa = PBXBuildFile; fileRef = BCF61ED51E5AA2C9003E386D /* Statuses.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -117,6 +119,10 @@
 		BCE2A8B41D8E430400104BC5 /* UITableViewCell+HYBMasonryAutoCellHeight.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableViewCell+HYBMasonryAutoCellHeight.m"; sourceTree = "<group>"; };
 		BCE50BD11D928E80001688B8 /* XTWBStatusHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XTWBStatusHelper.h; sourceTree = "<group>"; };
 		BCE50BD21D928E80001688B8 /* XTWBStatusHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XTWBStatusHelper.m; sourceTree = "<group>"; };
+		BCF61ED11E5A96BF003E386D /* WeiboTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeiboTableViewCell.h; sourceTree = "<group>"; };
+		BCF61ED21E5A96BF003E386D /* WeiboTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeiboTableViewCell.m; sourceTree = "<group>"; };
+		BCF61ED41E5AA2C9003E386D /* Statuses.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Statuses.h; sourceTree = "<group>"; };
+		BCF61ED51E5AA2C9003E386D /* Statuses.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Statuses.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -329,6 +335,7 @@
 		BCD0F5421D89320400153623 /* News */ = {
 			isa = PBXGroup;
 			children = (
+				BCF61ECD1E5A8D6E003E386D /* XTWeiboTableView */,
 				BCD0F5431D89320A00153623 /* NewsViewController.h */,
 				BCD0F5441D89320A00153623 /* NewsViewController.m */,
 			);
@@ -353,6 +360,17 @@
 				BCE2A8B41D8E430400104BC5 /* UITableViewCell+HYBMasonryAutoCellHeight.m */,
 			);
 			path = HYBMasonryAutoCellHeight;
+			sourceTree = "<group>";
+		};
+		BCF61ECD1E5A8D6E003E386D /* XTWeiboTableView */ = {
+			isa = PBXGroup;
+			children = (
+				BCF61ED11E5A96BF003E386D /* WeiboTableViewCell.h */,
+				BCF61ED21E5A96BF003E386D /* WeiboTableViewCell.m */,
+				BCF61ED41E5AA2C9003E386D /* Statuses.h */,
+				BCF61ED51E5AA2C9003E386D /* Statuses.m */,
+			);
+			path = XTWeiboTableView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -545,9 +563,11 @@
 				BCE50BD31D928E80001688B8 /* XTWBStatusHelper.m in Sources */,
 				BC83950B1D87E48B007130A9 /* LoginViewController.m in Sources */,
 				BCD0F5491D89323100153623 /* MyViewController.m in Sources */,
+				BCF61ED31E5A96BF003E386D /* WeiboTableViewCell.m in Sources */,
 				BC8394DB1D87BF3D007130A9 /* ViewController.m in Sources */,
 				B9F287D71D8EBDE700E90C8D /* SDWaitingView.m in Sources */,
 				B9F287D61D8EBDE700E90C8D /* SDPhotoBrowser.m in Sources */,
+				BCF61ED61E5AA2C9003E386D /* Statuses.m in Sources */,
 				BCD0F54C1D89385800153623 /* NSString+XTAdd.m in Sources */,
 				BCCE88411D94BE9B00C066E6 /* UIViewController+XTAdd.m in Sources */,
 				B938A86A1D88385700A4F636 /* CommonModel.m in Sources */,

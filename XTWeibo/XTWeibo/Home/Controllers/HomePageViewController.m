@@ -15,7 +15,6 @@
 @interface HomePageViewController ()<UITableViewDelegate, UITableViewDataSource>
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) NSMutableArray *dataArray;
-@property (nonatomic, strong) NSMutableArray *userArray;
 @property (nonatomic, assign) NSInteger page;
 @property (nonatomic, assign) LoadType type;
 @property (nonatomic, strong) FMDatabase *db;
@@ -38,13 +37,6 @@
         _dataArray = [NSMutableArray array];
     }
     return _dataArray;
-}
-- (NSMutableArray *)userArray
-{
-    if (!_userArray) {
-        _userArray = [NSMutableArray array];
-    }
-    return _userArray;
 }
 - (UITableView *)tableView
 {
@@ -88,7 +80,6 @@
                 case NewDataStyle: {
                     // 加载新数据清空数组
                     self.dataArray = nil;
-                    self.userArray = nil;
                 }
                     break;
                 case LoadMoreStyle: {
@@ -183,6 +174,11 @@
 - (void)summerxx_RefreshHeader:(UITableView *)tableView{
     // 设置回调（一旦进入刷新状态，就调用target的action，也就是调用self的loadNewData方法）
     MJRefreshNormalHeader *header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadNewData)];
+    [header setTitle:@"夏天然后" forState:MJRefreshStateIdle];
+    [header setTitle:@"夏天然后" forState:MJRefreshStatePulling];
+    [header setTitle:@"夏天然后" forState:MJRefreshStateRefreshing];
+    [header setTitle:@"夏天然后" forState:MJRefreshStateNoMoreData];
+
     // 设置自动切换透明度(在导航栏下面自动隐藏)
     header.automaticallyChangeAlpha = YES;
     // 隐藏时间

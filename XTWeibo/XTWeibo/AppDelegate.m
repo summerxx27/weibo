@@ -50,6 +50,8 @@
     }else{
         self.window.rootViewController = _tabVC;
     }
+    
+//    self.window.rootViewController = [NewsViewController new];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(dissMissLoginVC) name:DISS_MISS_VC object:nil];
     return YES;
 }
