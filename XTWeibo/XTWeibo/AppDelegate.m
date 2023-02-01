@@ -39,7 +39,11 @@
     MyViewController *myVC = [[MyViewController alloc] init];
     UINavigationController *myNavVC = [[UINavigationController alloc] initWithRootViewController:myVC];
     myVC.title = @"老婆专用";
-    
+    myVC.tabBarItem.image =  [[UIImage imageNamed:@"gift40.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+
+    NSDictionary *dic = [NSDictionary dictionaryWithObject:[UIColor yellowColor] forKey:NSForegroundColorAttributeName];
+    [myVC.tabBarItem setTitleTextAttributes:dic forState:UIControlStateSelected];
+
 //    _tabVC.viewControllers = @[homeNavVC, newsNavVC, myNavVC];
     _tabVC.viewControllers = @[myNavVC];
 

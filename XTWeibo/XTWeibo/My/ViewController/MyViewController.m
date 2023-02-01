@@ -21,6 +21,7 @@
 @interface MyViewController ()
 
 @property (nonatomic, strong) HoshiTextField *textField;
+@property (nonatomic, strong) HoshiTextField *pagetextField;
 @property (nonatomic, strong) UILabel *tipsLabel;
 @property (nonatomic, strong) UIButton *excelBtn;
 @property (nonatomic, strong) UIButton *exportBtn;
@@ -46,8 +47,17 @@
 
 - (void)setupViews
 {
+    UIImageView *imageV = [[UIImageView alloc] init];
+    imageV.userInteractionEnabled = YES;
+//    imageV.image = [UIImage imageNamed:@"summer.png"];
+    [self.view addSubview:imageV];
+    [imageV mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.mas_equalTo(0);
+    }];
+
     [self.view addSubview:self.textField];
     [self.view addSubview:self.tipsLabel];
+    [self.view addSubview:self.pagetextField];
     [self.view addSubview:self.excelBtn];
     [self.view addSubview:self.exportBtn];
     [self.view addSubview:self.startBtn];
@@ -64,9 +74,16 @@
         make.height.mas_equalTo(200);
     }];
 
+    [self.pagetextField mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(self.view);
+        make.right.mas_equalTo(-100);
+        make.top.equalTo(self.textField.mas_bottom).offset(5);
+        make.height.mas_equalTo(50);
+    }];
+
     [self.tipsLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.right.equalTo(self.view);
-        make.top.mas_equalTo(self.textField.mas_bottom).offset(10);
+        make.top.mas_equalTo(self.pagetextField.mas_bottom).offset(10);
         make.height.mas_equalTo(80);
     }];
 
@@ -106,6 +123,9 @@
         [SVProgressHUD showErrorWithStatus:@"请输入要查询的用户名!!!"];
         return;
     }
+
+    NSString *pageStr = self.textField.text.length == 0 ? @"1" : self.pagetextField.text;
+
     NSArray *users = [repoStr componentsSeparatedByString:@" "];
 //    NSArray *users = @[
 //        @"mosn", // 23
@@ -141,7 +161,7 @@
 //    ];
 
     // 用户下的所有库
-    NSString *reposListUrl = @"https://api.github.com/users/%@/repos?per_page=100&page=1";
+    NSString *reposListUrl = @"https://api.github.com/users/%@/repos?per_page=100&page=%@";
     // 库详情信息
     NSString *reposDetailUrl = @"https://api.github.com/repos/%@/%@";
     // openrank
@@ -153,7 +173,7 @@
 
         dispatch_semaphore_t semaphore = dispatch_semaphore_create(0);
         for (int i = 0; i < users.count; i ++) {
-            NSString *url = [NSString stringWithFormat:reposListUrl, users[i]];
+            NSString *url = [NSString stringWithFormat:reposListUrl, users[i], pageStr];
             // 请求每个用户的所有库
             [XTNetwork requestWithURL:url parameter:nil methods:GET successResult:^(id result) {
 
@@ -256,6 +276,7 @@
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
 {
     [self.textField resignFirstResponder];
+    [self.pagetextField resignFirstResponder];
 }
 
 - (HoshiTextField *)textField
@@ -270,6 +291,20 @@
         _textField.placeholderColor = UIColor.redColor;
     }
     return _textField;
+}
+
+- (HoshiTextField *)pagetextField
+{
+    if (!_pagetextField) {
+        _pagetextField = [[HoshiTextField alloc] init];
+        _pagetextField.layer.borderColor = UIColor.cyanColor.CGColor;
+        _pagetextField.layer.borderWidth = 2;
+        _pagetextField.placeholder = @"每页最多100, 默认页码为 1";
+        _pagetextField.placeholderFontScale = 1;
+        _pagetextField.font = [UIFont systemFontOfSize:14];
+        _pagetextField.placeholderColor = UIColor.redColor;
+    }
+    return _pagetextField;
 }
 
 - (UILabel *)tipsLabel
@@ -394,8 +429,6 @@
             [self.excelArray addObject:model];
 
         }];
-
-
     }];
 }
 @end

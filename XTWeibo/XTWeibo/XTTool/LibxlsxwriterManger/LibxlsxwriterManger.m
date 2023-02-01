@@ -146,7 +146,7 @@ static lxw_format *numberFormat;
         worksheet_write_number(worksheet, self.rowNum, 18,  model.openrankSum, numberFormat);
         worksheet_write_number(worksheet, self.rowNum, 19,  model.activitySum, numberFormat);
 
-        NSLog(@"i === %d, rowNum === %d", i, self.rowNum);
+//        NSLog(@"i === %d, rowNum === %d", i, self.rowNum);
     }
 }
 
