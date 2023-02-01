@@ -1,13 +1,20 @@
+
+platform :ios, '8.0'
+
 target 'XTWeibo' do
-pod 'AFNetworking', '~> 3.1.0'
-pod 'Masonry', '~> 1.0.1'
-pod 'MBProgressHUD', '~> 0.9.1'
-pod 'MJRefresh','3.1.9'
-pod 'SDWebImage','3.7.5'
-pod 'FDFullscreenPopGesture','1.1'
-pod 'XTAlertViewController', '~> 1.0.1'
-pod "WeiboSDK", :git => "https://github.com/sinaweibosdk/weibo_ios_sdk.git"
-pod 'YYModel'
-pod 'TTTAttributedLabel', '~> 2.0.0' 
-pod 'FMDB', '~> 2.6.2'
+  pod 'AFNetworking', '~> 3.1.0'
+  pod 'Masonry', '~> 1.0.1'
+  pod 'MBProgressHUD', '~> 0.9.1'
+  pod 'MJRefresh','3.1.9'
+  pod 'SDWebImage','3.7.5'
+  pod 'FDFullscreenPopGesture','1.1'
+  pod 'XTAlertViewController', '~> 1.0.1'
+  pod 'Weibo_SDK'
+  pod 'YYModel'
+  pod 'TTTAttributedLabel', '~> 2.0.0'
+  pod 'FMDB', '~> 2.6.2'
+  pod 'libxlsxwriter', '~> 0.8.3'
+  pod 'SVProgressHUD'
+  pod 'ReactiveObjC', '3.1.1'
+  pod 'TextFieldEffects'
 end

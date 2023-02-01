@@ -31,6 +31,7 @@
     }
     return self;
 }
+
 - (NSMutableArray *)dataArray
 {
     if (!_dataArray) {
@@ -38,6 +39,7 @@
     }
     return _dataArray;
 }
+
 - (UITableView *)tableView
 {
     if (!_tableView) {
@@ -49,6 +51,7 @@
     }
     return _tableView;
 }
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     [[SDWebImageDownloader sharedDownloader] setShouldDecompressImages:NO];
@@ -67,12 +70,13 @@
     [self.view addSubview:self.tableView];
     [self summerxx_RefreshHeader:self.tableView];
 }
+
 - (void)reqNetwork
 {
 #warning 真机可采用微博登陆的方式
     NSString *accessToken = [[NSUserDefaults standardUserDefaults] objectForKey:ACCESS_TOKEN];
     NSString *url = [NSString stringWithFormat:WEIBO_STATUSES_FRIENDS, accessToken, (long)self.page];
-    
+    NSLog(@"%@", url);
     [XTNetwork XTNetworkRequestWithURL:url parameter:nil methods:GET successResult:^(id result) {
         if ([result isKindOfClass:[NSDictionary class]]) {
             NSMutableArray *statisesArray = [result objectForKey:@"statuses"];
@@ -101,12 +105,15 @@
         [self showHint:@"请求失败"];
     }];
 }
+
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     return 1;
 }
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return self.dataArray.count;
 }
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     CommonTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellID];
     CommonModel *model = self.dataArray[indexPath.row];
@@ -150,10 +157,9 @@
         };
         [self presentViewController:activity animated:YES completion:NULL];
     };
-//    __weak typeof(self) weakSelf = self;
-//    __weak typeof(CommonTableViewCell *) weakCell = cell;
     return cell;
 }
+
 #pragma mark - 返回 Cell的高度
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     CommonModel *model = self.dataArray[indexPath.row];
@@ -170,6 +176,7 @@
     }];
     return cellHeight;
 }
+
 #pragma mark - 刷新
 - (void)summerxx_RefreshHeader:(UITableView *)tableView{
     // 设置回调（一旦进入刷新状态，就调用target的action，也就是调用self的loadNewData方法）
@@ -201,28 +208,33 @@
     // 设置footer
     tableView.mj_footer = footer;
 }
+
 - (void)loadNewData{
     _page = 1;
     self.type = NewDataStyle;
     [self reqNetwork];
     
 }
+
 - (void)loadMoreData{
     _page ++;
     self.type = LoadMoreStyle;
     [self reqNetwork];
 }
 
--(void)viewDidDisappear:(BOOL)animated{
+ -(void)viewDidDisappear:(BOOL)animated{
     [super viewDidDisappear:animated];
     [self clearImageCache];
 }
--(void)didReceiveMemoryWarning{
+
+- (void)didReceiveMemoryWarning{
     [super didReceiveMemoryWarning];
     [self clearImageCache];
 }
--(void)clearImageCache{
+
+- (void)clearImageCache{
     SDImageCache *imageCache = [SDImageCache sharedImageCache];
     [imageCache clearMemory];
 }
+
 @end

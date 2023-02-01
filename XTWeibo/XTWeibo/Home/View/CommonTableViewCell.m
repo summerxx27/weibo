@@ -19,6 +19,7 @@
     }
     return _headerImageView;
 }
+
 - (UILabel *)labelName
 {
     if (!_labelName) {
@@ -26,6 +27,7 @@
     }
     return _labelName;
 }
+
 - (UILabel *)labelTime
 {
     if (!_labelTime) {
@@ -33,6 +35,7 @@
     }
     return _labelTime;
 }
+
 - (UILabel *)labelText
 {
     if (!_labelText) {
@@ -40,6 +43,7 @@
     }
     return _labelText;
 }
+
 - (SDPhotoGroup *)photosGroup
 {
     if (!_photosGroup) {
@@ -47,6 +51,7 @@
     }
     return _photosGroup;
 }
+
 - (UIButton *)btnShare
 {
     if (!_btnShare) {
@@ -54,6 +59,7 @@
     }
     return _btnShare;
 }
+
 - (UIButton *)btnLove
 {
     if (!_btnLove) {
@@ -61,6 +67,7 @@
     }
     return _btnLove;
 }
+
 - (TTTAttributedLabel *)LabelLoveText
 {
     if (!_LabelLoveText) {
@@ -68,6 +75,7 @@
     }
     return _LabelLoveText;
 }
+
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];

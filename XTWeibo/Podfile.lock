@@ -18,14 +18,18 @@ PODS:
   - FMDB (2.6.2):
     - FMDB/standard (= 2.6.2)
   - FMDB/standard (2.6.2)
+  - libxlsxwriter (0.8.9)
   - Masonry (1.0.1)
   - MBProgressHUD (0.9.2)
   - MJRefresh (3.1.9)
+  - ReactiveObjC (3.1.1)
   - SDWebImage (3.7.5):
     - SDWebImage/Core (= 3.7.5)
   - SDWebImage/Core (3.7.5)
+  - SVProgressHUD (2.2.5)
+  - TextFieldEffects (1.6.0)
   - TTTAttributedLabel (2.0.0)
-  - WeiboSDK (3.1.4)
+  - Weibo_SDK (3.2.3)
   - XTAlertViewController (1.0.1)
   - YYModel (1.0.4)
 
@@ -33,37 +37,54 @@ DEPENDENCIES:
   - AFNetworking (~> 3.1.0)
   - FDFullscreenPopGesture (= 1.1)
   - FMDB (~> 2.6.2)
+  - libxlsxwriter (~> 0.8.3)
   - Masonry (~> 1.0.1)
   - MBProgressHUD (~> 0.9.1)
   - MJRefresh (= 3.1.9)
+  - ReactiveObjC (= 3.1.1)
   - SDWebImage (= 3.7.5)
+  - SVProgressHUD
+  - TextFieldEffects
   - TTTAttributedLabel (~> 2.0.0)
-  - WeiboSDK (from `https://github.com/sinaweibosdk/weibo_ios_sdk.git`)
+  - Weibo_SDK
   - XTAlertViewController (~> 1.0.1)
   - YYModel
 
-EXTERNAL SOURCES:
-  WeiboSDK:
-    :git: https://github.com/sinaweibosdk/weibo_ios_sdk.git
-
-CHECKOUT OPTIONS:
-  WeiboSDK:
-    :commit: 6031a8da4ce17867ff5887b8dfc59ea45930274e
-    :git: https://github.com/sinaweibosdk/weibo_ios_sdk.git
+SPEC REPOS:
+  trunk:
+    - AFNetworking
+    - FDFullscreenPopGesture
+    - FMDB
+    - libxlsxwriter
+    - Masonry
+    - MBProgressHUD
+    - MJRefresh
+    - ReactiveObjC
+    - SDWebImage
+    - SVProgressHUD
+    - TextFieldEffects
+    - TTTAttributedLabel
+    - Weibo_SDK
+    - XTAlertViewController
+    - YYModel
 
 SPEC CHECKSUMS:
-  AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
+  AFNetworking: 19827bce8c8d25b16bea185837cb66976c23f8fe
   FDFullscreenPopGesture: a8a620179e3d9c40e8e00256dcee1c1a27c6d0f0
   FMDB: 854a0341b4726e53276f2a8996f06f1b80f9259a
+  libxlsxwriter: e3bb38110b774ed2ef47d850689cef0a114e9cc6
   Masonry: a1a931a0d08870ed8ae415a2ea5ea68ebcac77df
   MBProgressHUD: 1569cf7ace17a8bac47aabfbb8580a49690386d1
   MJRefresh: c5f1f1653e5a1b932c90f78074f2bc86f3f9bd5e
+  ReactiveObjC: 011caa393aa0383245f2dcf9bf02e86b80b36040
   SDWebImage: 69c6303e3348fba97e03f65d65d4fbc26740f461
+  SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
+  TextFieldEffects: 529b8aff706fb40f82c41c780c0777941a893796
   TTTAttributedLabel: 8cffe8e127e4e82ff3af1e5386d4cd0ad000b656
-  WeiboSDK: bceab625ec59b7039ba721cc4ba9f5868804f63e
+  Weibo_SDK: 652ca78c2f7147a5de5e75e7cbea89838a81772a
   XTAlertViewController: 578cf12e607bb7714445280e01a5f09f5128196e
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
 
-PODFILE CHECKSUM: c284f56eb20f8da6c7f65f78260ad5ec60d527bc
+PODFILE CHECKSUM: 06c43b46a6531833c38691536c2baa19e75136c6
 
-COCOAPODS: 1.1.0.beta.1
+COCOAPODS: 1.11.3

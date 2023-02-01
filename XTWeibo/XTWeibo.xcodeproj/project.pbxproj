@@ -11,6 +11,13 @@
 		B938A8641D8837F100A4F636 /* HomePageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B938A8631D8837F100A4F636 /* HomePageViewController.m */; };
 		B938A8671D88380900A4F636 /* CommonTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B938A8661D88380900A4F636 /* CommonTableViewCell.m */; };
 		B938A86A1D88385700A4F636 /* CommonModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B938A8691D88385700A4F636 /* CommonModel.m */; };
+		B93DF96B296E72D4005B96AB /* RepoDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B93DF96A296E72D4005B96AB /* RepoDetailModel.m */; };
+		B93DFDA0296FD9B7005B96AB /* RepoDetailApi.m in Sources */ = {isa = PBXBuildFile; fileRef = B93DFD9F296FD9B7005B96AB /* RepoDetailApi.m */; };
+		B93DFDE429713E01005B96AB /* LibxlsxwriterManger.m in Sources */ = {isa = PBXBuildFile; fileRef = B93DFDE329713E01005B96AB /* LibxlsxwriterManger.m */; };
+		B93DFDE8297143A6005B96AB /* FormatConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = B93DFDE7297143A6005B96AB /* FormatConfig.m */; };
+		B9D0F929298A0DFC0025080C /* UIScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D0F928298A0DFC0025080C /* UIScreen.swift */; };
+		B9D0F92B298A263C0025080C /* UIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D0F92A298A263C0025080C /* UIApplication.swift */; };
+		B9D0F930298A27F50025080C /* SingleRepoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D0F92F298A27F50025080C /* SingleRepoViewController.swift */; };
 		B9F287D51D8EBDE700E90C8D /* SDBrowserImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = B9F287CF1D8EBDE700E90C8D /* SDBrowserImageView.m */; };
 		B9F287D61D8EBDE700E90C8D /* SDPhotoBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = B9F287D11D8EBDE700E90C8D /* SDPhotoBrowser.m */; };
 		B9F287D71D8EBDE700E90C8D /* SDWaitingView.m in Sources */ = {isa = PBXBuildFile; fileRef = B9F287D41D8EBDE700E90C8D /* SDWaitingView.m */; };
@@ -68,6 +75,18 @@
 		B938A8661D88380900A4F636 /* CommonTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommonTableViewCell.m; sourceTree = "<group>"; };
 		B938A8681D88385700A4F636 /* CommonModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonModel.h; sourceTree = "<group>"; };
 		B938A8691D88385700A4F636 /* CommonModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommonModel.m; sourceTree = "<group>"; };
+		B93DF969296E72D4005B96AB /* RepoDetailModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RepoDetailModel.h; sourceTree = "<group>"; };
+		B93DF96A296E72D4005B96AB /* RepoDetailModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RepoDetailModel.m; sourceTree = "<group>"; };
+		B93DFD9E296FD9B7005B96AB /* RepoDetailApi.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RepoDetailApi.h; sourceTree = "<group>"; };
+		B93DFD9F296FD9B7005B96AB /* RepoDetailApi.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RepoDetailApi.m; sourceTree = "<group>"; };
+		B93DFDE229713E01005B96AB /* LibxlsxwriterManger.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LibxlsxwriterManger.h; sourceTree = "<group>"; };
+		B93DFDE329713E01005B96AB /* LibxlsxwriterManger.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LibxlsxwriterManger.m; sourceTree = "<group>"; };
+		B93DFDE6297143A6005B96AB /* FormatConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FormatConfig.h; sourceTree = "<group>"; };
+		B93DFDE7297143A6005B96AB /* FormatConfig.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FormatConfig.m; sourceTree = "<group>"; };
+		B9D0F927298A0DFC0025080C /* XTWeibo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "XTWeibo-Bridging-Header.h"; sourceTree = "<group>"; };
+		B9D0F928298A0DFC0025080C /* UIScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIScreen.swift; sourceTree = "<group>"; };
+		B9D0F92A298A263C0025080C /* UIApplication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIApplication.swift; sourceTree = "<group>"; };
+		B9D0F92F298A27F50025080C /* SingleRepoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleRepoViewController.swift; sourceTree = "<group>"; };
 		B9F287CE1D8EBDE700E90C8D /* SDBrowserImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDBrowserImageView.h; sourceTree = "<group>"; };
 		B9F287CF1D8EBDE700E90C8D /* SDBrowserImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDBrowserImageView.m; sourceTree = "<group>"; };
 		B9F287D01D8EBDE700E90C8D /* SDPhotoBrowser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDPhotoBrowser.h; sourceTree = "<group>"; };
@@ -199,6 +218,61 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		B93DF96C296FD51A005B96AB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B93DF969296E72D4005B96AB /* RepoDetailModel.h */,
+				B93DF96A296E72D4005B96AB /* RepoDetailModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		B93DF96D296FD525005B96AB /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				BCD0F5471D89323100153623 /* MyViewController.h */,
+				BCD0F5481D89323100153623 /* MyViewController.m */,
+				B9D0F92F298A27F50025080C /* SingleRepoViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		B93DF96F296FD547005B96AB /* Api */ = {
+			isa = PBXGroup;
+			children = (
+				B93DFD9E296FD9B7005B96AB /* RepoDetailApi.h */,
+				B93DFD9F296FD9B7005B96AB /* RepoDetailApi.m */,
+			);
+			path = Api;
+			sourceTree = "<group>";
+		};
+		B93DFD9A296FD966005B96AB /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		B93DFDE52971436F005B96AB /* LibxlsxwriterManger */ = {
+			isa = PBXGroup;
+			children = (
+				B93DFDE229713E01005B96AB /* LibxlsxwriterManger.h */,
+				B93DFDE329713E01005B96AB /* LibxlsxwriterManger.m */,
+				B93DFDE6297143A6005B96AB /* FormatConfig.h */,
+				B93DFDE7297143A6005B96AB /* FormatConfig.m */,
+			);
+			path = LibxlsxwriterManger;
+			sourceTree = "<group>";
+		};
+		B9D0F92C298A265D0025080C /* XTUIKitSwift */ = {
+			isa = PBXGroup;
+			children = (
+				B9D0F92A298A263C0025080C /* UIApplication.swift */,
+				B9D0F928298A0DFC0025080C /* UIScreen.swift */,
+			);
+			path = XTUIKitSwift;
+			sourceTree = "<group>";
+		};
 		B9F287CD1D8EBDE700E90C8D /* SDPhotoBrowser */ = {
 			isa = PBXGroup;
 			children = (
@@ -241,7 +315,7 @@
 				BCCE88421D94D00900C066E6 /* Resources */,
 				BCD0F5461D89322200153623 /* My */,
 				BCD0F5421D89320400153623 /* News */,
-				BC8395131D87F1DF007130A9 /* Tool */,
+				BC8395131D87F1DF007130A9 /* XTTool */,
 				BC83950C1D87EFC7007130A9 /* Home */,
 				BC8395081D87E479007130A9 /* Login */,
 				BC8394D61D87BF3D007130A9 /* AppDelegate.h */,
@@ -303,9 +377,12 @@
 			path = Home;
 			sourceTree = "<group>";
 		};
-		BC8395131D87F1DF007130A9 /* Tool */ = {
+		BC8395131D87F1DF007130A9 /* XTTool */ = {
 			isa = PBXGroup;
 			children = (
+				B9D0F927298A0DFC0025080C /* XTWeibo-Bridging-Header.h */,
+				B9D0F92C298A265D0025080C /* XTUIKitSwift */,
+				B93DFDE52971436F005B96AB /* LibxlsxwriterManger */,
 				B9F287CD1D8EBDE700E90C8D /* SDPhotoBrowser */,
 				BCE2A8B01D8E430400104BC5 /* HYBMasonryAutoCellHeight */,
 				BC8395141D87F2A4007130A9 /* XTNetwork.h */,
@@ -319,7 +396,7 @@
 				BCCE883F1D94BE9B00C066E6 /* UIViewController+XTAdd.h */,
 				BCCE88401D94BE9B00C066E6 /* UIViewController+XTAdd.m */,
 			);
-			path = Tool;
+			path = XTTool;
 			sourceTree = "<group>";
 		};
 		BCCE88421D94D00900C066E6 /* Resources */ = {
@@ -345,8 +422,10 @@
 		BCD0F5461D89322200153623 /* My */ = {
 			isa = PBXGroup;
 			children = (
-				BCD0F5471D89323100153623 /* MyViewController.h */,
-				BCD0F5481D89323100153623 /* MyViewController.m */,
+				B93DFD9A296FD966005B96AB /* ViewModel */,
+				B93DF96F296FD547005B96AB /* Api */,
+				B93DF96D296FD525005B96AB /* ViewController */,
+				B93DF96C296FD51A005B96AB /* Model */,
 			);
 			path = My;
 			sourceTree = "<group>";
@@ -384,7 +463,6 @@
 				BC8394CC1D87BF3D007130A9 /* Sources */,
 				BC8394CD1D87BF3D007130A9 /* Frameworks */,
 				BC8394CE1D87BF3D007130A9 /* Resources */,
-				C821477ECD92DD688268FBBB /* [CP] Embed Pods Frameworks */,
 				6BFF2B5A9058554928894C00 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
@@ -443,7 +521,8 @@
 				TargetAttributes = {
 					BC8394CF1D87BF3D007130A9 = {
 						CreatedOnToolsVersion = 7.3;
-						DevelopmentTeam = 637U33J5E6;
+						DevelopmentTeam = 8XEUVFYSL4;
+						LastSwiftMigration = 1420;
 					};
 					BC8394E81D87BF3D007130A9 = {
 						CreatedOnToolsVersion = 7.3;
@@ -460,6 +539,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -512,13 +592,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-XTWeibo-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		6BFF2B5A9058554928894C00 /* [CP] Copy Pods Resources */ = {
@@ -527,28 +610,20 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-XTWeibo/Pods-XTWeibo-resources.sh",
+				"${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle",
+				"${PODS_ROOT}/SVProgressHUD/SVProgressHUD/SVProgressHUD.bundle",
+				"${PODS_ROOT}/Weibo_SDK/libWeiboSDK/WeiboSDK.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MJRefresh.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/SVProgressHUD.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/WeiboSDK.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-XTWeibo/Pods-XTWeibo-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		C821477ECD92DD688268FBBB /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-XTWeibo/Pods-XTWeibo-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-XTWeibo/Pods-XTWeibo-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -558,14 +633,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B93DFDE8297143A6005B96AB /* FormatConfig.m in Sources */,
 				B9F287D51D8EBDE700E90C8D /* SDBrowserImageView.m in Sources */,
 				BCD0F53D1D89089C00153623 /* SDPhotoItem.m in Sources */,
 				BCE50BD31D928E80001688B8 /* XTWBStatusHelper.m in Sources */,
 				BC83950B1D87E48B007130A9 /* LoginViewController.m in Sources */,
+				B9D0F92B298A263C0025080C /* UIApplication.swift in Sources */,
 				BCD0F5491D89323100153623 /* MyViewController.m in Sources */,
 				BCF61ED31E5A96BF003E386D /* WeiboTableViewCell.m in Sources */,
 				BC8394DB1D87BF3D007130A9 /* ViewController.m in Sources */,
 				B9F287D71D8EBDE700E90C8D /* SDWaitingView.m in Sources */,
+				B9D0F929298A0DFC0025080C /* UIScreen.swift in Sources */,
 				B9F287D61D8EBDE700E90C8D /* SDPhotoBrowser.m in Sources */,
 				BCF61ED61E5AA2C9003E386D /* Statuses.m in Sources */,
 				BCD0F54C1D89385800153623 /* NSString+XTAdd.m in Sources */,
@@ -573,13 +651,17 @@
 				B938A86A1D88385700A4F636 /* CommonModel.m in Sources */,
 				B938A8641D8837F100A4F636 /* HomePageViewController.m in Sources */,
 				B938A8671D88380900A4F636 /* CommonTableViewCell.m in Sources */,
+				B93DFDA0296FD9B7005B96AB /* RepoDetailApi.m in Sources */,
 				BCD0F53A1D89076F00153623 /* SDPhotoGroup.m in Sources */,
 				BCE2A8B61D8E430400104BC5 /* UITableViewCell+HYBMasonryAutoCellHeight.m in Sources */,
+				B93DFDE429713E01005B96AB /* LibxlsxwriterManger.m in Sources */,
 				BCCE883E1D94BD0900C066E6 /* UIView+XTAdd.m in Sources */,
 				BC8395161D87F2A4007130A9 /* XTNetwork.m in Sources */,
 				BC8394D81D87BF3D007130A9 /* AppDelegate.m in Sources */,
 				BCD0F5451D89320A00153623 /* NewsViewController.m in Sources */,
+				B9D0F930298A27F50025080C /* SingleRepoViewController.swift in Sources */,
 				BCE2A8B51D8E430400104BC5 /* UITableView+HYBCacheHeight.m in Sources */,
+				B93DF96B296E72D4005B96AB /* RepoDetailModel.m in Sources */,
 				BC8394D51D87BF3D007130A9 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -724,7 +806,8 @@
 			baseConfigurationReference = 1CF959AE7C241F6E3C6721F3 /* Pods-XTWeibo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 637U33J5E6;
+				CLANG_ENABLE_MODULES = YES;
+				DEVELOPMENT_TEAM = 8XEUVFYSL4;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/XTWeibo/XTWeiboPrefixHeader.pch";
 				INFOPLIST_FILE = XTWeibo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -733,8 +816,11 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/XTWeibo/TLIbs/SDKExport",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = XTWeiboSummerxx.com;
+				PRODUCT_BUNDLE_IDENTIFIER = XTWeiboSummerxx.com1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "XTWeibo/XTTool/XTWeibo-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -743,7 +829,8 @@
 			baseConfigurationReference = 1237CEF09411E85B15A98D69 /* Pods-XTWeibo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 637U33J5E6;
+				CLANG_ENABLE_MODULES = YES;
+				DEVELOPMENT_TEAM = 8XEUVFYSL4;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/XTWeibo/XTWeiboPrefixHeader.pch";
 				INFOPLIST_FILE = XTWeibo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -752,14 +839,17 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/XTWeibo/TLIbs/SDKExport",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = XTWeiboSummerxx.com;
+				PRODUCT_BUNDLE_IDENTIFIER = XTWeiboSummerxx.com1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "XTWeibo/XTTool/XTWeibo-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
 		BC8395011D87BF3E007130A9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = XTWeiboTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -772,6 +862,7 @@
 		BC8395021D87BF3E007130A9 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = XTWeiboTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -784,6 +875,7 @@
 		BC8395041D87BF3E007130A9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = XTWeiboUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "-MyCompanyName-.XTWeiboUITests";
@@ -795,6 +887,7 @@
 		BC8395051D87BF3E007130A9 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = XTWeiboUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "-MyCompanyName-.XTWeiboUITests";

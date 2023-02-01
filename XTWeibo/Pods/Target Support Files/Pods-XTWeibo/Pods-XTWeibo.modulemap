@@ -1,0 +1,6 @@
+module Pods_XTWeibo {
+  umbrella header "Pods-XTWeibo-umbrella.h"
+
+  export *
+  module * { export * }
+}

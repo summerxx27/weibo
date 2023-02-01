@@ -28,25 +28,29 @@
     _tabVC = [[UITabBarController alloc] init];
     
     // 首页
-    HomePageViewController *homeVC = [[HomePageViewController alloc] init];
-    UINavigationController *homeNavVC = [[UINavigationController alloc] initWithRootViewController:homeVC];
-    homeVC.title = @"首页";
+//    HomePageViewController *homeVC = [[HomePageViewController alloc] init];
+//    UINavigationController *homeNavVC = [[UINavigationController alloc] initWithRootViewController:homeVC];
+//    homeVC.title = @"首页";
     // 消息
-    NewsViewController *newsVC = [[NewsViewController alloc] init];
-    UINavigationController *newsNavVC = [[UINavigationController alloc] initWithRootViewController:newsVC];
-    newsVC.title = @"消息";
+//    NewsViewController *newsVC = [[NewsViewController alloc] init];
+//    UINavigationController *newsNavVC = [[UINavigationController alloc] initWithRootViewController:newsVC];
+//    newsVC.title = @"消息";
     // 我的
     MyViewController *myVC = [[MyViewController alloc] init];
     UINavigationController *myNavVC = [[UINavigationController alloc] initWithRootViewController:myVC];
-    myVC.title = @"我的";
+    myVC.title = @"老婆专用";
     
-    _tabVC.viewControllers = @[homeNavVC, newsNavVC, myNavVC];
+//    _tabVC.viewControllers = @[homeNavVC, newsNavVC, myNavVC];
+    _tabVC.viewControllers = @[myNavVC];
+
     
     
     // accessToken 为空, 证明没有登陆过
     if ([[NSUserDefaults standardUserDefaults] objectForKey:ACCESS_TOKEN] == nil) {
         // 根视图为登陆VC
-        self.window.rootViewController = [LoginViewController new];
+//        self.window.rootViewController = [LoginViewController new];
+        self.window.rootViewController = _tabVC;
+
     }else{
         self.window.rootViewController = _tabVC;
     }
